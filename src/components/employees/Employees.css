@@ -1,0 +1,126 @@
+.employees {
+    border-collapse: collapse;
+    width: 70%;
+    table-layout: fixed;
+    position: relative;
+    left: 15%;
+    top: 46px;
+}
+
+
+.employees td,
+.employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+
+}
+
+.employees tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.employees tr:nth-child(odd) {
+    background-color: rgb(211, 209, 209);
+}
+
+.employees tr:hover {
+    background-color: rgba(62, 97, 113, 0.579);
+}
+
+.employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgba(21, 11, 158, 0.867);
+    color: white;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-search {
+    position: relative;
+    top: 20px;
+    width: 18rem;
+    height: 2rem;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.input-search:focus {
+    background-color: rgba(75, 75, 75, 0.101);
+}
+
+.input-search::placeholder {
+    text-align: center;
+}
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30px;
+    color: red;
+    font-size: 1.3rem;
+}
+
+.employees-visibility {
+    visibility: hidden;
+}
+
+@media screen and (width <=850px) {
+    table {
+        border: 0;
+    }
+
+    table th {
+        display: block;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1em;
+        text-align: right;
+    }
+
+    table td::before {
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    .input-search {
+        width: 20rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (width <=320px) {
+
+    .input-search {
+        width: 12rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
