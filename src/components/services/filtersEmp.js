@@ -24,15 +24,16 @@ export const filterByName = (type, arrowFullName, setArrowFullName, resultsInput
     }
 }
 
-export const filterByAge = (type, arrowAge, setArrowAge, resultsInput, setResultsInput) => {
-    if (arrowAge) {
-        setArrowAge(!arrowAge)
-        const sorted = [...resultsInput].sort((a, b) => a[type] > b[type] ? 1 : -1)
+export const filterByDate = (type, arrowDate, setArrowDate, resultsInput, setResultsInput) => {
+    if (arrowDate) {
+        setArrowDate(!arrowDate)
+        const sorted = [...resultsInput].sort((a, b) => new Date(a[type]).getTime() - new Date(b[type]).getTime())
         setResultsInput(sorted)
     }
     else {
-        setArrowAge(!arrowAge)
-        const sorted = [...resultsInput].sort((a, b) => a[type] < b[type] ? 1 : -1)
+        setArrowDate(!arrowDate)
+        const sorted = [...resultsInput].sort((a, b) => new Date(b[type]).getTime() - new Date(a[type]).getTime())
+
         setResultsInput(sorted)
     }
 }
@@ -62,4 +63,3 @@ export const filterByAtWork = (type, arrowSalary, setArrowSalary, resultsInput, 
         setResultsInput(sorted)
     }
 }
-

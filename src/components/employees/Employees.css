@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.employees td img {
+    width: 60px;
+}
+
 .filters {
     display: flex;
     justify-content: center;
@@ -77,7 +81,25 @@
     visibility: hidden;
 }
 
-@media screen and (width <=850px) {
+.charts {
+    position: relative;
+    top: .5rem;
+    margin-left: .8rem;
+}
+
+.xls {
+    position: relative;
+    top: .5rem;
+    margin-left: .8rem;
+}
+
+.pdf {
+    position: relative;
+    top: .5rem;
+    margin-left: .8rem;
+}
+
+@media screen and (width <=1000px) {
     table {
         border: 0;
     }
@@ -114,13 +136,43 @@
         height: 2rem;
         font-size: 1rem;
     }
+
+    .charts {
+        position: relative;
+        top: 5px;
+        left: 8.5%;
+
+    }
+
+    .xls {
+        position: relative;
+        top: 5px;
+        left: 9%;
+    }
+
+    .pdf {
+        position: relative;
+        top: 5px;
+        left: 9%;
+    }
 }
 
-@media screen and (width <=320px) {
+
+
+@media screen and (width <=450px) {
 
     .input-search {
-        width: 12rem;
+        width: 15rem;
         height: 2rem;
         font-size: 1rem;
     }
+
+    .charts {
+        position: relative;
+        top: 10px;
+        left: 25%;
+        width: 10rem;
+    }
+
+
 }

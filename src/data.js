@@ -1,170 +1,171 @@
+
 export default [
     {
         "id": 1,
-        "employee_name": "Tiger Nixon",
-        "employee_salary": 320800,
-        "employee_age": 61,
+        "name": "Tiger Nixon",
+        "salary": 320800,
+        "date_birth": "05/01/2013",
         "at_work": true
     },
     {
         "id": 2,
-        "employee_name": "Garrett Winters",
-        "employee_salary": 170750,
-        "employee_age": 63,
+        "name": "Garrett Winters",
+        "salary": 170750,
+        "date_birth": "09/03/2014",
         "at_work": true
     },
     {
         "id": 3,
-        "employee_name": "Ashton Cox",
-        "employee_salary": 86000,
-        "employee_age": 66,
+        "name": "Ashton Cox",
+        "salary": 86000,
+        "date_birth": "12/07/1996",
         "at_work": true
     },
     {
         "id": 4,
-        "employee_name": "Cedric Kelly",
-        "employee_salary": 433060,
-        "employee_age": 22,
+        "name": "Cedric Kelly",
+        "salary": 433060,
+        "date_birth": "02/12/1991",
         "at_work": false
     },
     {
         "id": 5,
-        "employee_name": "Airi Satou",
-        "employee_salary": 162700,
-        "employee_age": 33,
+        "name": "Airi Satou",
+        "salary": 162700,
+        "date_birth": "12/01/1993",
         "at_work": false
     },
     {
         "id": 6,
-        "employee_name": "Brielle Williamson",
-        "employee_salary": 372000,
-        "employee_age": 61,
+        "name": "Brielle Williamson",
+        "salary": 372000,
+        "date_birth": "09/01/2002",
         "at_work": true
     },
     {
         "id": 7,
-        "employee_name": "Herrod Chandler",
-        "employee_salary": 137500,
-        "employee_age": 59,
+        "name": "Herrod Chandler",
+        "salary": 137500,
+        "date_birth": "07/02/1998",
         "at_work": false
     },
     {
         "id": 8,
-        "employee_name": "Rhona Davidson",
-        "employee_salary": 327900,
-        "employee_age": 55,
+        "name": "Rhona Davidson",
+        "salary": 327900,
+        "date_birth": "04/12/1990",
         "at_work": true
     },
     {
         "id": 9,
-        "employee_name": "Colleen Hurst",
-        "employee_salary": 205500,
-        "employee_age": 39,
+        "name": "Colleen Hurst",
+        "salary": 205500,
+        "date_birth": "12/12/1989",
         "at_work": true
     },
     {
         "id": 10,
-        "employee_name": "Sonya Frost",
-        "employee_salary": 103600,
-        "employee_age": 23,
+        "name": "Sonya Frost",
+        "salary": 103600,
+        "date_birth": "08/01/1992",
         "at_work": true
     },
     {
         "id": 11,
-        "employee_name": "Jena Gaines",
-        "employee_salary": 90560,
-        "employee_age": 30,
+        "name": "Jena Gaines",
+        "salary": 90560,
+        "date_birth": "08/01/1991",
         "at_work": false
     },
     {
         "id": 12,
-        "employee_name": "Quinn Flynn",
-        "employee_salary": 342000,
-        "employee_age": 22,
+        "name": "Quinn Flynn",
+        "salary": 342000,
+        "date_birth": "12/01/1993",
         "at_work": false
     },
     {
         "id": 13,
-        "employee_name": "Charde Marshall",
-        "employee_salary": 470600,
-        "employee_age": 36,
+        "name": "Charde Marshall",
+        "salary": 470600,
+        "date_birth": "04/01/1994",
         "at_work": false
     },
     {
         "id": 14,
-        "employee_name": "Haley Kennedy",
-        "employee_salary": 313500,
-        "employee_age": 43,
+        "name": "Haley Kennedy",
+        "salary": 313500,
+        "date_birth": "05/01/2003",
         "at_work": true
     },
     {
         "id": 15,
-        "employee_name": "Tatyana Fitzpatrick",
-        "employee_salary": 385750,
-        "employee_age": 19,
+        "name": "Tatyana Fitzpatrick",
+        "salary": 385750,
+        "date_birth": "03/01/2003",
         "at_work": true
     },
     {
         "id": 16,
-        "employee_name": "Michael Silva",
-        "employee_salary": 198500,
-        "employee_age": 66,
+        "name": "Michael Silva",
+        "salary": 198500,
+        "date_birth": "05/01/2003",
         "at_work": true
     },
     {
         "id": 17,
-        "employee_name": "Paul Byrd",
-        "employee_salary": 725000,
-        "employee_age": 64,
+        "name": "Paul Byrd",
+        "salary": 725000,
+        "date_birth": "05/01/1986",
         "at_work": false
     },
     {
         "id": 18,
-        "employee_name": "Gloria Little",
-        "employee_salary": 237500,
-        "employee_age": 59,
+        "name": "Gloria Little",
+        "salary": 237500,
+        "date_birth": "01/01/1976",
         "at_work": false
     },
     {
         "id": 19,
-        "employee_name": "Bradley Greer",
-        "employee_salary": 132000,
-        "employee_age": 41,
+        "name": "Bradley Greer",
+        "salary": 132000,
+        "date_birth": "09/01/1992",
         "at_work": false
     },
     {
         "id": 20,
-        "employee_name": "Dai Rios",
-        "employee_salary": 217500,
-        "employee_age": 35,
+        "name": "Dai Rios",
+        "salary": 217500,
+        "date_birth": "12/01/1991",
         "at_work": false
     },
     {
         "id": 21,
-        "employee_name": "Jenette Caldwell",
-        "employee_salary": 345000,
-        "employee_age": 30,
+        "name": "Jenette Caldwell",
+        "salary": 345000,
+        "date_birth": "11/01/1992",
         "at_work": true
     },
     {
         "id": 22,
-        "employee_name": "Yuri Berry",
-        "employee_salary": 675000,
-        "employee_age": 40,
+        "name": "Yuri Berry",
+        "salary": 675000,
+        "date_birth": "10/05/1998",
         "at_work": true
     },
     {
         "id": 23,
-        "employee_name": "Caesar Vance",
-        "employee_salary": 106450,
-        "employee_age": 21,
+        "name": "Caesar Vance",
+        "salary": 106450,
+        "date_birth": "12/06/2001",
         "at_work": true
     },
     {
         "id": 24,
-        "employee_name": "Doris Wilder",
-        "employee_salary": 85600,
-        "employee_age": 23,
+        "name": "Doris Wilder",
+        "salary": 85600,
+        "date_birth": "09/07/2000",
         "at_work": true
     }
 ]
