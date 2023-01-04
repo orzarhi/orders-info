@@ -69,7 +69,7 @@ const ChartLineDemo = () => {
                 height={550}
                 width={900}
             />
-            <div>
+            <div cl>
                 <ChartPolarArea />
             </div>
         </div>
