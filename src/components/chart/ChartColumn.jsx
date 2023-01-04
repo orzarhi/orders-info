@@ -1,45 +1,58 @@
-import {
-    BarElement,
-    CategoryScale, Chart as ChartJS, Legend, LinearScale,
-    Tooltip
-} from 'chart.js'
-import React from 'react'
-
-import { Bar } from 'react-chartjs-2'
-ChartJS.register(
-    BarElement,
-    CategoryScale,
-    LinearScale,
-    Tooltip,
-    Legend
-)
-
-import mockData from '../../mockData'
-import ChartLine from './ChartLine'
-
+import React, { useState } from 'react'
+import ReactApexChart from 'react-apexcharts'
+import orders from '../data/orders'
+import "./ChartStyle.css"
 const ChartColumn = () => {
 
-    const data = {
-        labels: mockData.map(m => m.name),
-        datasets: [
-            {
-                label: 'Salary',
-                data: mockData.map(m => m.salary),
-                backgroundColor: '#5BC0F8',
-                borderColor: 'black',
-                borderWidth: 1,
+    const dataOrders = orders.map(o => o.data.topItemsLeftInStock)
+    // console.log("🚀dataOrders", ...dataOrders)
+
+    const [state, setState] = useState({
+
+        series: [{
+            name: 'Net Profit',
+            data: [44, 55, 57, 56, 61, 58, 63, 60]
+        }],
+
+        options: {
+            chart: {
+                type: 'bar',
+                height: 350
             },
-        ]
-    }
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '10%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: ['בדיקה', 'בדיקה', 'בדיקה', 'בדיקה', 'בדיקה', 'בדיקה', 'בדיקה', 'בדיקה'],
+            },
 
-    const options = {
+            fill: {
+                opacity: 1
+            },
+        },
+    })
 
-    }
 
     return (
-        <div style={{ padding: '20px', width: '60%' }}>
-            <Bar data={data} options={options} />
-            <ChartLine />
+        <div className='chart-column'>
+            <ReactApexChart
+                options={state.options}
+                series={state.series}
+                type="bar"
+                height={350}
+            />
 
         </div>
     )

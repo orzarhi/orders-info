@@ -1,41 +1,81 @@
-import {
-    Chart as ChartJS, LineElement, PointElement, CategoryScale,
-    LinearScale
-} from 'chart.js'
-import React from 'react'
+import React, { useState } from 'react'
+import ReactApexChart from 'react-apexcharts'
+import mockData from "../../mockData"
+import ChartColumn from './ChartColumn';
+import ChartPolarArea from './ChartPolarArea';
+import ChartStacked from './ChartStacked';
+import "./ChartStyle.css"
+const ChartLineDemo = () => {
 
-import { Line } from 'react-chartjs-2'
-ChartJS.register(
-    LineElement,
-    PointElement,
-    CategoryScale,
-    LinearScale
-)
+    const name = mockData.map(m => m.name);
+    const salary = mockData.map(m => m.salary);
 
-import mockData from '../../mockData'
-
-const ChartLine = () => {
-
-    const data = {
-        labels: mockData.map(m => m.name),
-        datasets: [
+    const [state, setState] = useState({
+        series: [
             {
-                label: 'Age',
-                data: mockData.map(m => new Date().getFullYear() - new Date(m.date_birth).getFullYear()),
-                backgroundColor: '#FFC93C',
-                borderColor: 'black',
-                borderWidth: 1,
+                name: 'series-1',
+                data: salary
             },
-        ]
-    }
-    const options = {}
+        ],
+        options: {
+            chart: {
+                id: 'realtime',
+                height: 350,
+                type: 'line',
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    dynamicAnimation: {
+                        speed: 1000
+                    }
+                },
+                toolbar: {
+                    show: true
+                },
+                zoom: {
+                    enabled: true
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            title: {
+                text: 'Dynamic Updating Chart',
+                align: 'left'
+            },
+            markers: {
+                size: 0
+            },
+            xaxis: {
+                categories: name
+
+            },
+            yaxis: {
+                categories: salary,
+                opposite: true
+            },
+            legend: {
+                show: false
+            },
+        },
+
+    })
 
     return (
-        <div style={{ padding: '20px', width: '90%' }}>
-            <Line data={data} options={options} />
-
-        </div>
+        <>
+            <div className='chart-line'>
+                <ReactApexChart
+                    options={state.options}
+                    series={state.series}
+                    type="line"
+                    height={375}
+                />
+            </div>
+        </>
     )
 }
 
-export default ChartLine
+export default ChartLineDemo

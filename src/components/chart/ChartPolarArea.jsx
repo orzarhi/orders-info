@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
+import { agentsSum } from '../data/agentsSum'
+import "./ChartStyle.css"
 
 const ChartPolarArea = () => {
+    const name = agentsSum.map(m => m.label);
+    const value = agentsSum.map(m => m.value);
+
     const [state, setState] = useState({
 
-        series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+        series: value,
         options: {
             chart: {
                 type: 'polarArea',
@@ -20,25 +25,38 @@ const ChartPolarArea = () => {
                 options: {
                     chart: {
                         width: 200
+
                     },
                     legend: {
                         position: 'bottom'
-                    }
+                    },
                 }
-            }]
+            }],
+            labels: name,
         },
     })
 
     return (
-        <div>
+        <div className='chart-polar'>
             <ReactApexChart
                 options={state.options}
                 series={state.series}
                 type="polarArea"
-                height={550}
-                width={900}
+                height={280}
             />
+            <hr />
+            <div className='chart-polar-info'>
+                <div className='sales'>
+                    <span>סה"כ מכירות</span>
+                    <br />
+                    <h3>₪486,710</h3>
+                </div >
 
+                <div className='ready'>
+                    <span>מוכנים</span>
+                    <h3>9</h3>
+                </div>
+            </div>
         </div>
     )
 }
