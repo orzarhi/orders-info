@@ -4,14 +4,15 @@ import "jspdf-autotable"
 
 const Pdf = () => {
 
-    const test = () => {
+    const exportFile = () => {
         const doc = new jsPDF();
         doc.autoTable({ html: '#my-table' });
+
         doc.save('table.pdf');
     }
 
     return (
-        <button className='btn btn-primary pdf' onClick={test}>Export to pdf</button>
+        <button className='btn btn-primary pdf' onClick={exportFile}>Export to pdf</button>
     )
 }
 

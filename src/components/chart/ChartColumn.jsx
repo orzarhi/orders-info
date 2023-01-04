@@ -1,34 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import { Column } from '@ant-design/plots';
+import {
+    BarElement,
+    CategoryScale, Chart as ChartJS, Legend, LinearScale,
+    Tooltip
+} from 'chart.js'
+import React from 'react'
+
+import { Bar } from 'react-chartjs-2'
+ChartJS.register(
+    BarElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend
+)
+
+import mockData from '../../mockData'
+import ChartLine_copy from './ChartLine_copy'
 
 const ChartColumn = () => {
-    const [data, setData] = useState([]);
 
+    const data = {
+        labels: mockData.map(m => m.name),
+        datasets: [
+            {
+                label: 'Salary',
+                data: mockData.map(m => m.salary),
+                backgroundColor: '#5BC0F8',
+                borderColor: 'black',
+                borderWidth: 1,
+            },
+        ]
+    }
 
-    useEffect(() => {
-        asyncFetch();
-    }, []);
+    const options = {
 
-    const asyncFetch = () => {
-        fetch('https://gw.alipayobjects.com/os/antfincdn/PC3daFYjNw/column-data.json')
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => {
-                console.log('fetch data failed', error);
-            });
-    };
-    const config = {
-        data,
-        xField: 'city',
-        yField: 'value',
-        seriesField: 'type',
-        isGroup: true,
-        columnStyle: {
-            radius: [20, 20, 0, 0],
-        },
-    };
+    }
 
-    return <Column {...config} />;
+    return (
+        <div style={{ padding: '20px', width: '60%' }}>
+            <Bar data={data} options={options} />
+            <ChartLine_copy />
+
+        </div>
+    )
 }
 
 export default ChartColumn

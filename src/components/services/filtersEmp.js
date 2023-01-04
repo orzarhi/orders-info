@@ -63,3 +63,10 @@ export const filterByAtWork = (type, arrowSalary, setArrowSalary, resultsInput, 
         setResultsInput(sorted)
     }
 }
+export const filterDates = (data, dateFrom, dateTo) => {
+    const filterDates = data.filter(d => (new Date(d.date_birth)?.toISOString() >= new Date(dateFrom)?.toISOString()) && (new Date(d.date_birth)?.toISOString() <= new Date(dateTo)?.toISOString()))
+    console.log("🚀 filterDates", filterDates)
+
+
+    return filterDates;
+}

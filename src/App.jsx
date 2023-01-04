@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import ChartPie from './components/chart/ChartPie';
+import ChartColumn from './components/chart/ChartColumn';
 import Employees from './components/employees/Employees';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Employees />} exact />
-      <Route path="/charts" element={<ChartPie />} exact />
+      <Route path="/charts" element={<ChartColumn />} exact />
     </Routes>
   )
 }
