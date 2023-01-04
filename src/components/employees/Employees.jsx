@@ -10,6 +10,7 @@ import { deleteEmp } from '../services/deleteEmp';
 import { filterByAtWork, filterByDate, filterById, filterByName, filterBySalary } from '../services/filtersEmp';
 import { searchEmp } from '../services/searchEmp';
 import "./Employees.css";
+import orders from "../data/orders"
 
 const Employees = () => {
     const [resultsInput, setResultsInput] = useState(mockData)
@@ -19,7 +20,7 @@ const Employees = () => {
     const [arrowSalary, setArrowSalary] = useState(false)
     const [arrowAtWork, setArrowAtWork] = useState(false)
 
-
+    console.log(orders);
     return (
         <>
             <Xlsx data={resultsInput} />

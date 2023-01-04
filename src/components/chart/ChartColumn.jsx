@@ -15,7 +15,7 @@ ChartJS.register(
 )
 
 import mockData from '../../mockData'
-import ChartLine_copy from './ChartLine_copy'
+import ChartLine from './ChartLine'
 
 const ChartColumn = () => {
 
@@ -39,7 +39,7 @@ const ChartColumn = () => {
     return (
         <div style={{ padding: '20px', width: '60%' }}>
             <Bar data={data} options={options} />
-            <ChartLine_copy />
+            <ChartLine />
 
         </div>
     )
