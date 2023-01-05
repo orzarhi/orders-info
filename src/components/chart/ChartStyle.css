@@ -1,11 +1,14 @@
+:root {
+    --box-shadow-chart: 2px 3px 6px 2px #a09e9eae;
+}
+
 .chart-polar {
     position: relative;
     float: right;
-    /* top: 50px; */
-    width: 40%;
+    width: 45%;
     margin-right: 1rem;
     padding: 1rem;
-    box-shadow: 2px 3px 6px 2px #a09e9eae;
+    box-shadow: var(--box-shadow-chart);
 }
 
 .chart-polar-info .sales {
@@ -33,9 +36,9 @@
     position: relative;
     padding: 1rem;
     margin-left: 1rem;
-    top: 420px;
-    box-shadow: 2px 3px 6px 2px #a09e9eae;
-    width: 40%;
+    top: 425px;
+    width: 45%;
+    box-shadow: var(--box-shadow-chart);
 }
 
 .chart-column {
@@ -43,11 +46,11 @@
     padding: 1rem;
     margin-bottom: 5rem;
     margin-left: 1rem;
-    left: 40%;
+    left: 45%;
     top: 450px;
     float: right;
-    box-shadow: 2px 3px 6px 2px #a09e9eae;
-    width: 40%;
+    width: 45%;
+    box-shadow: var(--box-shadow-chart);
 
 }
 
@@ -56,8 +59,34 @@
     padding: 1rem;
     margin-bottom: 5rem;
     margin-left: 1rem;
-    bottom: 20px;
+    bottom: 24px;
     float: left;
-    box-shadow: 2px 3px 6px 2px #a09e9eae;
-    width: 40%;
+    width: 45%;
+    box-shadow: var(--box-shadow-chart);
+}
+
+.chart-pie {
+    position: absolute;
+    width: 45%;
+    margin-left: 1rem;
+    top: 157%;
+    box-shadow: var(--box-shadow-chart);
+}
+
+.chart-area {
+    position: absolute;
+    width: 45%;
+    margin-left: 1rem;
+    top: 156%;
+    left: 53.3%;
+    box-shadow: var(--box-shadow-chart);
+}
+
+.chart-scatter {
+    position: absolute;
+    width: 45%;
+    margin-left: 1rem;
+    top: 214%;
+    left: 53.3%;
+    box-shadow: var(--box-shadow-chart);
 }

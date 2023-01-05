@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import ReactApexChart from 'react-apexcharts'
-import mockData from "../../mockData"
-import ChartColumn from './ChartColumn';
-import ChartPolarArea from './ChartPolarArea';
-import ChartStacked from './ChartStacked';
-import "./ChartStyle.css"
+import React, { useState } from 'react';
+import ReactApexChart from 'react-apexcharts';
+import mockData from "../../mockData";
+import "./ChartStyle.css";
 const ChartLineDemo = () => {
 
     const name = mockData.map(m => m.name);

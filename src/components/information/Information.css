@@ -3,3 +3,48 @@
     height: 60%;
     background-color: red;
 }
+
+.inputs-select {
+    display: flex;
+    justify-content: space-evenly;
+    width: 105%;
+    align-items: center;
+    direction: rtl;
+    position: relative;
+    top: 9rem;
+    right: 30rem;
+
+}
+
+.square-info {
+    width: 200px;
+    height: 160px;
+    color: black;
+    position: relative;
+    top: 12rem;
+    left: 61rem;
+    border-radius: 20px;
+    margin-left: 1rem;
+}
+
+.square-info>h1 {
+    width: 20%;
+    position: relative;
+    top: .5rem;
+    display: table;
+    margin: 2px auto;
+    border-radius: 15px;
+}
+
+.square-info>h4 {
+    text-align: center;
+    position: relative;
+    top: 7%;
+}
+
+.square-info>span {
+    position: relative;
+    top: 10%;
+    display: table;
+    margin: 0 auto;
+}

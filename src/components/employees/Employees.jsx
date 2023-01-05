@@ -1,68 +1,35 @@
-import React, { useState } from 'react';
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import { Button } from '@mui/material';
+import { DataGrid } from '@mui/x-data-grid';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import user from "../../../public/image/user.png";
 import mockData from '../../mockData';
 import Pdf from '../documents/Pdf';
 import Xlsx from '../documents/Xlsx';
-import { deleteEmp } from '../services/deleteEmp';
-import { filterByAtWork, filterByDate, filterById, filterByName, filterBySalary } from '../services/filtersEmp';
-import { searchEmp } from '../services/searchEmp';
+import { columns } from '../utils/columns';
+
 import "./Employees.css";
-import orders from "../data/orders"
-
 const Employees = () => {
-    const [resultsInput, setResultsInput] = useState(mockData)
-    const [arrowId, setArrowId] = useState(false)
-    const [arrowFullName, setArrowFullName] = useState(false)
-    const [arrowDate, setArrowDate] = useState(false)
-    const [arrowSalary, setArrowSalary] = useState(false)
-    const [arrowAtWork, setArrowAtWork] = useState(false)
 
-    console.log(orders);
     return (
-        <>
-            <Xlsx data={resultsInput} />
+        <div>
+            <Xlsx data={mockData} />
             <Pdf />
             <Link to='/charts'>
-                <button type="button" className="btn btn-info charts">Go to Charts</button>
+                <Button className='charts' variant="contained" color='info' >Go to Charts</Button>
             </Link>
             <div className='filters'>
-                <input
-                    type='text'
-                    className='input-search'
-                    placeholder='Search Employee...'
-                    onChange={e => searchEmp(e.target.value, setResultsInput, mockData)}
+
+            </div>
+            <div className='data-table' >
+                <DataGrid
+                    rows={mockData}
+                    columns={columns}
+                    pageSize={25}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
                 />
             </div>
-
-            {resultsInput.length === 0 && <span className='not-found'>Not Found</span>}
-
-            <table id='my-table' className={resultsInput.length > 0 ? 'employees' : 'employees employees-visibility'}>
-                <tbody>
-                    <tr>
-                        <th>Picture</th>
-                        <th onClick={() => filterById('id', arrowId, setArrowId, resultsInput, setResultsInput)}>{arrowId ? <AiFillCaretDown /> : <AiFillCaretUp />} Id</th>
-                        <th onClick={() => filterByName('name', arrowFullName, setArrowFullName, resultsInput, setResultsInput)}>{arrowFullName ? <AiFillCaretDown /> : <AiFillCaretUp />} Full Name</th>
-                        <th onClick={() => filterByDate('date_birth', arrowDate, setArrowDate, resultsInput, setResultsInput)}>{arrowDate ? <AiFillCaretDown /> : <AiFillCaretUp />} Date Birth</th>
-                        <th onClick={() => filterBySalary('salary', arrowSalary, setArrowSalary, resultsInput, setResultsInput)}>{arrowSalary ? <AiFillCaretDown /> : <AiFillCaretUp />} Salary</th>
-                        <th onClick={() => filterByAtWork('at_work', arrowAtWork, setArrowAtWork, resultsInput, setResultsInput)}>{arrowAtWork ? <AiFillCaretDown /> : <AiFillCaretUp />} At Work</th>
-                    </tr>
-                    {resultsInput.map((employee) => (
-                        <tr key={employee.id}>
-                            <td><img src={user} alt='user-picture' /></td>
-                            <td>{employee?.id}</td>
-                            <td>{employee?.name}</td>
-                            <td>{employee?.date_birth}</td>
-                            <td>{employee?.salary.toLocaleString()}</td>
-                            <td><input type='checkbox' checked={employee?.at_work} readOnly /></td>
-                            <td><RiDeleteBin5Line style={{ cursor: "pointer" }} onClick={() => deleteEmp(employee?.id, setResultsInput)} /></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </>
+        </div>
     )
 }
 

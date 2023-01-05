@@ -5,9 +5,3 @@ export const reducer = (arr) => {
     });
     return result;
 }
-
-// export const mapObject = (obj, value) => {
-//     const result = obj.map(o => o[value])
-
-//     return result;
-// }

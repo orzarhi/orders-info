@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactApexChart from 'react-apexcharts'
 import orders from '../data/orders'
-import { reducer } from '../utils/reduceArray'
+import { reducer } from '../utils/reduce/reduceArray'
 const ChartStacked = () => {
 
     const ordersData = orders.map(o => o.data.topItemsLeftInStock)
@@ -61,8 +61,8 @@ const ChartStacked = () => {
                 options={state.options}
                 series={state.series}
                 type="bar"
-                height={350}
-            // width={750}
+                height={355}
+            // width={820}
             />
         </div>
     )

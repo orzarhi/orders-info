@@ -42,7 +42,8 @@ const ChartPolarArea = () => {
                 options={state.options}
                 series={state.series}
                 type="polarArea"
-                height={280}
+                height={290}
+            // width={800}
             />
             <hr />
             <div className='chart-polar-info'>

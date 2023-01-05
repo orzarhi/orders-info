@@ -1,6 +1,7 @@
 import React from 'react'
 import { jsPDF } from "jspdf";
 import "jspdf-autotable"
+import { Button } from '@mui/material';
 
 const Pdf = () => {
 
@@ -12,7 +13,7 @@ const Pdf = () => {
     }
 
     return (
-        <button className='btn btn-primary pdf' onClick={exportFile}>Export to pdf</button>
+        <Button className='pdf' variant="contained" color='inherit' onClick={exportFile}>Export to xls</Button>
     )
 }
 

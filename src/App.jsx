@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Charts from './components/chart/Charts';
+import Charts from './components/chart/_Charts';
 import Employees from './components/employees/Employees';
 
 function App() {
