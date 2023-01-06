@@ -1,0 +1,28 @@
+.square-info {
+	width: 200px;
+	height: 160px;
+	color: black;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.square-info-icon {
+	margin: 2px auto;
+	border-radius: 15px;
+	font-size: 2rem;
+}
+
+.square-info-sum {
+	display: block;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.square-info-content {
+	text-align: center;
+	display: block;
+	font-size: 1rem;
+}

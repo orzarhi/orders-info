@@ -1,78 +1,76 @@
-import React, { useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
+import React, { useState } from "react";
+import ReactApexChart from "react-apexcharts";
 import mockData from "../../mockData";
-import "./ChartStyle.css";
+import "./Chart.css";
 const ChartLineDemo = () => {
+	const name = mockData.map((m) => m.name);
+	const salary = mockData.map((m) => m.salary);
 
-    const name = mockData.map(m => m.name);
-    const salary = mockData.map(m => m.salary);
+	const [state, setState] = useState({
+		series: [
+			{
+				name: "series-1",
+				data: salary,
+			},
+		],
+		options: {
+			chart: {
+				id: "realtime",
+				height: 350,
+				type: "line",
+				animations: {
+					enabled: true,
+					easing: "linear",
+					dynamicAnimation: {
+						speed: 1000,
+					},
+				},
+				toolbar: {
+					show: true,
+				},
+				zoom: {
+					enabled: true,
+				},
+				redrawOnWindowResize: true,
+			},
+			dataLabels: {
+				enabled: false,
+			},
+			stroke: {
+				curve: "smooth",
+			},
+			title: {
+				text: "Dynamic Updating Chart",
+				align: "left",
+			},
+			markers: {
+				size: 0,
+			},
+			xaxis: {
+				categories: name,
+			},
+			yaxis: {
+				categories: salary,
+				opposite: true,
+			},
+			legend: {
+				show: false,
+			},
+		},
+	});
 
-    const [state, setState] = useState({
-        series: [
-            {
-                name: 'series-1',
-                data: salary
-            },
-        ],
-        options: {
-            chart: {
-                id: 'realtime',
-                height: 350,
-                type: 'line',
-                animations: {
-                    enabled: true,
-                    easing: 'linear',
-                    dynamicAnimation: {
-                        speed: 1000
-                    }
-                },
-                toolbar: {
-                    show: true
-                },
-                zoom: {
-                    enabled: true
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            title: {
-                text: 'Dynamic Updating Chart',
-                align: 'left'
-            },
-            markers: {
-                size: 0
-            },
-            xaxis: {
-                categories: name
+	return (
+		<>
+			<div className="chart-line">
+				<ReactApexChart
+					options={state.options}
+					series={state.series}
+					type="line"
+					height={375}
+				/>
+			</div>
+		</>
+	);
+};
 
-            },
-            yaxis: {
-                categories: salary,
-                opposite: true
-            },
-            legend: {
-                show: false
-            },
-        },
-
-    })
-
-    return (
-        <>
-            <div className='chart-line'>
-                <ReactApexChart
-                    options={state.options}
-                    series={state.series}
-                    type="line"
-                    height={375}
-                />
-            </div>
-        </>
-    )
-}
-
-export default ChartLineDemo
+export default ChartLineDemo;

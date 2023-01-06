@@ -1,0 +1,8 @@
+.pdf {
+	position: relative;
+	top: 0.5rem;
+	left: 2.5rem;
+	text-transform: capitalize !important;
+	font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif !important;
+	font-size: 1rem !important;
+}

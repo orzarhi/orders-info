@@ -1,8 +1,9 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import * as XLSX from "xlsx"
+import clsx from 'clsx'
 
-const Xlsx = ({ data }) => {
+const Xlsx = ({ data, className, content }) => {
 
     const handleExportXlsx = () => {
         var wb = XLSX.utils.book_new(),
@@ -13,7 +14,13 @@ const Xlsx = ({ data }) => {
         XLSX.writeFile(wb, "employees-info.xlsx");
     }
     return (
-        <Button className='xls' variant="contained" color='inherit' onClick={handleExportXlsx}>Export to xls</Button>
+        <Button className={clsx("xlsx", className)}
+            variant="contained"
+            color='inherit'
+            onClick={handleExportXlsx}
+        >
+            {content}
+        </Button>
     )
 }
 
