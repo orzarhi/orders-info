@@ -4,25 +4,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 import mockData from "~/mockData";
 import Pdf from "~/components/pdf/Pdf";
-import Xlsx from "../documents/Xlsx";
+import Xls from "../xls/Xls";
 import { columns } from "~/components/data/columns";
 import "./Employees.css";
 
 const Employees = () => {
 	return (
 		<div>
-			<Xlsx
+			<Xls
 				data={mockData}
-				className="xlsx-btn"
+				className="xls-btn"
 				content={"Export to xls"}
 			/>
-			<Pdf />
+			<Pdf className="pdf-btn" content={"Export to pdf"} />
+
 			<Link to="/charts">
 				<Button className="charts" variant="contained" color="info">
 					Go to Charts
 				</Button>
 			</Link>
-			<div className="filters"></div>
+
 			<div className="data-table">
 				<DataGrid
 					rows={mockData}

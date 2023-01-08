@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import orders from "../data/orders";
-import "./Chart.css";
+import orders from "../../data/orders";
+import "../Chart.css";
 const ChartColumn = () => {
-	const dataOrders = orders.map((o) => o.data.topItemsLeftInStock);
-	// console.log("🚀dataOrders", ...dataOrders)
-
 	const [state, setState] = useState({
 		series: [
 			{

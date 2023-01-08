@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import { agentsSum } from "../data/agentsSum";
-import "./Chart.css";
+import { agentsSum } from "~/components/data/agentsSum";
+import "../Chart.css";
+import "./ChartPolar.css";
+import { agentsName, agentsValue } from "./data/polarData";
 
-const ChartPolarArea = () => {
-	const name = agentsSum.map((m) => m.label);
-	const value = agentsSum.map((m) => m.value);
-
+const ChartPolar = () => {
 	const [state, setState] = useState({
-		series: value,
+		series: agentsValue(agentsSum),
 		options: {
 			chart: {
 				type: "polarArea",
@@ -33,7 +32,7 @@ const ChartPolarArea = () => {
 					},
 				},
 			],
-			labels: name,
+			labels: agentsName(agentsSum),
 		},
 	});
 
@@ -44,23 +43,22 @@ const ChartPolarArea = () => {
 				series={state.series}
 				type="polarArea"
 				height={290}
-				// width={800}
 			/>
 			<hr />
 			<div className="chart-polar-info">
-				<div className="sales">
+				<div>
 					<span>סה"כ מכירות</span>
 					<br />
-					<h3>₪486,710</h3>
+					<span className="chart-polar-info-number">₪486,710</span>
 				</div>
-
-				<div className="ready">
+				<hr />
+				<div>
 					<span>מוכנים</span>
-					<h3>9</h3>
+					<span className="chart-polar-info-number">9</span>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default ChartPolarArea;
+export default ChartPolar;

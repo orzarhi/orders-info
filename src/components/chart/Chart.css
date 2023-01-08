@@ -10,3 +10,13 @@
 	padding: 1.5rem;
 	box-shadow: 2px 3px 6px 2px #a09e9eae;
 }
+
+@media screen and (max-width: 915px) {
+	.charts-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	.charts-wrapper > * {
+		margin-top: 1rem;
+	}
+}

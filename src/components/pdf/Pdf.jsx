@@ -2,9 +2,9 @@ import React from "react";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import { Button } from "@mui/material";
-import "./Pdf.css";
+import clsx from "clsx";
 
-const Pdf = () => {
+const Pdf = ({ content, className }) => {
 	const exportFile = () => {
 		const doc = new jsPDF();
 		doc.autoTable({ html: "#my-table" });
@@ -14,12 +14,12 @@ const Pdf = () => {
 
 	return (
 		<Button
-			className="pdf"
+			className={clsx(className)}
 			variant="contained"
 			color="inherit"
 			onClick={exportFile}
 		>
-			Export to pdf
+			{content}
 		</Button>
 	);
 };

@@ -26,3 +26,9 @@
 	display: block;
 	font-size: 1rem;
 }
+
+@media screen and (max-width: 700px) {
+	.square-info {
+		width: 20rem;
+	}
+}

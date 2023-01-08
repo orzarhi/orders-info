@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import mockData from "../../mockData";
-import "./Chart.css";
+import mockData from "../../../mockData";
+import "../Chart.css";
 const ChartLineDemo = () => {
 	const name = mockData.map((m) => m.name);
 	const salary = mockData.map((m) => m.salary);

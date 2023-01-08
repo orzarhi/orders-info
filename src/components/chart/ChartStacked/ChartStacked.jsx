@@ -1,30 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import orders from "../data/orders";
-import { reducer } from "../utils/reduce/reduceArray";
-import "./Chart.css";
+import orders from "~/components/data/orders";
+import {
+	countLeftInStock,
+	countOrdered,
+	ordersDataName,
+} from "./data/stackedData";
+import "../Chart.css";
 
 const ChartStacked = () => {
-	const ordersData = orders.map((o) => o.data.topItemsLeftInStock);
-
-	const reduceData = reducer(ordersData);
-	const name = reduceData.map((o) => o.name);
-	const countLeftInStock = reduceData.map((o) => o.countLeftInStock);
-	const countOrdered = reduceData.map((o) => o.countOrdered);
-
-	// const ordersData = orders
-	// .flatMap((o) => o.data.topItemsLeftInStock)
-	// .map((i) => ({ label: i.name, value: i.id }));
-
 	const [state, setState] = useState({
 		series: [
 			{
 				name: "מלאי",
-				data: countLeftInStock,
+				data: countLeftInStock(orders),
 			},
 			{
 				name: "מכירות",
-				data: countOrdered,
+				data: countOrdered(orders),
 			},
 		],
 		options: {
@@ -48,7 +41,7 @@ const ChartStacked = () => {
 				},
 			],
 			xaxis: {
-				categories: name,
+				categories: ordersDataName(orders),
 			},
 			yaxis: {
 				opposite: true,

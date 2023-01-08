@@ -1,97 +1,87 @@
 :root {
-    --comic-font: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+	--comic-font: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
 }
 
 .data-table {
-    position: relative;
-    top: 2rem;
-    width: 55%;
-    height: 56.25rem;
-    display: table;
-    margin: 0 auto;
-    padding: 1.5rem;
+	position: relative;
+	top: 2rem;
+	width: 55%;
+	height: 56.25rem;
+	display: table;
+	margin: 0 auto;
+	padding: 1.5rem;
 }
 
 .charts {
-    position: relative;
-    top: .5rem;
-    left: 4rem;
-    text-transform: capitalize !important;
-    font-family: var(--comic-font) !important;
-    font-size: 1rem !important;
+	position: relative;
+	top: 0.5rem;
+	left: 4rem;
+	text-transform: capitalize !important;
+	font-family: var(--comic-font) !important;
+	font-size: 1rem !important;
 }
 
-.xls {
-    position: relative;
-    top: .5rem;
-    left: 1rem;
-    text-transform: capitalize !important;
-    font-family: var(--comic-font) !important;
-    font-size: 1rem !important;
+.xls-btn {
+	position: relative;
+	top: 0.5rem;
+	left: 1rem;
+	text-transform: capitalize !important;
+	font-family: var(--comic-font) !important;
+	font-size: 1rem !important;
 }
 
-.pdf {
-    position: relative;
-    top: .5rem;
-    left: 2.5rem;
-    text-transform: capitalize !important;
-    font-family: var(--comic-font) !important;
-    font-size: 1rem !important;
+.pdf-btn {
+	position: relative;
+	top: 0.5rem;
+	left: 2.5rem;
+	text-transform: capitalize !important;
+	font-family: var(--comic-font) !important;
+	font-size: 1rem !important;
 }
-
-
 
 .avatar {
-    width: 3.125rem;
-    border-radius: 1.5rem 2rem 1rem 5rem;
-    margin-bottom: .1rem;
-
+	width: 3.125rem;
+	border-radius: 1.5rem 2rem 1rem 5rem;
+	margin-bottom: 0.1rem;
 }
 
 @media screen and (width <=1000px) {
+	.data-table {
+		display: block;
+		float: left;
+		width: 100%;
+	}
 
-    .data-table {
-        display: block;
-        float: left;
-        width: 100%;
-    }
+	.charts {
+		position: relative;
+		top: 5px;
+		left: 8.5%;
+	}
 
-    .charts {
-        position: relative;
-        top: 5px;
-        left: 8.5%;
+	.xls {
+		position: relative;
+		top: 5px;
+		left: 9%;
+	}
 
-    }
-
-    .xls {
-        position: relative;
-        top: 5px;
-        left: 9%;
-    }
-
-    .pdf {
-        position: relative;
-        top: 5px;
-        left: 9%;
-    }
+	.pdf {
+		position: relative;
+		top: 5px;
+		left: 9%;
+	}
 }
 
-
-
 @media screen and (width <=450px) {
+	.data-table {
+		display: block;
+		float: left;
+		width: 100%;
+	}
 
-    .data-table {
-        display: block;
-        float: left;
-        width: 100%;
-    }
-
-    .charts {
-        position: relative;
-        top: 10px;
-        left: 25%;
-        width: 10rem;
-    }
-
-
+	.charts {
+		position: relative;
+		top: 10px;
+		left: 25%;
+		width: 10rem;
+	}
 }
