@@ -4,8 +4,7 @@
 
 .data-table {
 	position: relative;
-	/* top: 1rem; */
-	width: 45%;
+	width: 55%;
 	height: 56rem;
 	display: table;
 	margin: 0 auto;
@@ -14,7 +13,6 @@
 
 .charts {
 	position: relative;
-	top: 0.5rem;
 	left: 4rem;
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
@@ -23,7 +21,6 @@
 
 .xls-btn {
 	position: relative;
-	top: 0.5rem;
 	left: 1rem;
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
@@ -32,7 +29,6 @@
 
 .pdf-btn {
 	position: relative;
-	top: 0.5rem;
 	left: 2.5rem;
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
@@ -44,7 +40,19 @@
 	border-radius: 1.5rem 2rem 1rem 5rem;
 	margin-bottom: 0.1rem;
 }
-
+.input-search {
+	position: relative !important;
+	left: 20% !important;
+	margin-top: 1rem !important;
+	padding: 1rem;
+	width: 17rem !important;
+	height: 2rem !important;
+	font-size: 1.3rem !important;
+}
+.checkbox-filter {
+	position: relative !important;
+	left: 23% !important;
+}
 @media screen and (max-width: 1000px) {
 	.data-table {
 		display: block;
@@ -80,8 +88,18 @@
 
 	.charts {
 		position: relative;
-		top: 10px;
+		top: -0.5rem;
 		left: 25%;
 		width: 10rem;
+	}
+	.input-search {
+		width: 13rem !important;
+		position: relative !important;
+		left: -10% !important;
+		top: 3rem !important;
+	}
+	.checkbox-filter {
+		position: relative !important;
+		left: 5% !important;
 	}
 }

@@ -1,15 +1,42 @@
-import React from "react";
-import { jsPDF } from "jspdf";
-import "jspdf-autotable";
 import { Button } from "@mui/material";
 import clsx from "clsx";
+import { jsPDF } from "jspdf";
+import "jspdf-autotable";
 
-const Pdf = ({ content, className }) => {
+const Pdf = ({ data, content, className }) => {
 	const exportFile = () => {
-		const doc = new jsPDF();
-		doc.autoTable({ html: "#my-table" });
+		const unit = "pt";
+		const size = "A4";
+		const orientation = "portrait";
 
-		doc.save("table.pdf");
+		const marginLeft = 40;
+		const doc = new jsPDF(orientation, unit, size);
+		doc.setFontSize(15);
+
+		const title = "Employees";
+
+		const headers = [
+			["Id", "Full Name", "Date Birth", "Salary", "At Work"],
+		];
+
+		const resultData = data.map((e) => [
+			e.id,
+			e.name,
+			e.date_birth,
+			e.salary,
+			e.at_work,
+		]);
+
+		const contentTable = {
+			startY: 50,
+			head: headers,
+			body: resultData,
+		};
+
+		doc.text(title, marginLeft, 40);
+		doc.autoTable(contentTable);
+
+		doc.save("report.pdf");
 	};
 
 	return (

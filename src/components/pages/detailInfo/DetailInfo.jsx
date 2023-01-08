@@ -56,19 +56,19 @@ const DetailInfo = () => {
 			<section className="squares-info-wrapper">
 				<SquareInfo
 					content={"סך מכירות"}
-					sum={"₪486,710"}
+					sum={"₪ 486,710"}
 					icon={<AiOutlineShoppingCart />}
 					style={"#F3CCFF"}
 				/>
 				<SquareInfo
 					content={"כמות"}
-					sum={'85,590 ק"ג'}
+					sum={'ק"ג 85,590'}
 					icon={<GiWeight />}
 					style={"#FFF6BD"}
 				/>
 				<SquareInfo
 					content={"ממוצע לעסקה"}
-					sum={"₪25,392"}
+					sum={"₪ 25,392"}
 					icon={<BiCoinStack />}
 					style={"#91D8E4"}
 				/>

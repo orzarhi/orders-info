@@ -1,22 +1,29 @@
 import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import mockData from "~/mockData";
-import Pdf from "~/components/pdf/Pdf";
-import Xls from "../xls/Xls";
 import { columns } from "~/components/data/columns";
+import Pdf from "~/components/pdf/Pdf";
+import mockData from "~/mockData";
+import Xls from "../xls/Xls";
 import "./Employees.css";
+import Filters from "./Filters";
 
 const Employees = () => {
+	const [resultsInput, setResultsInput] = useState(mockData);
+
 	return (
-		<div>
+		<>
 			<Xls
-				data={mockData}
+				data={resultsInput}
 				className="xls-btn"
 				content={"Export to xls"}
 			/>
-			<Pdf className="pdf-btn" content={"Export to pdf"} />
+			<Pdf
+				data={resultsInput}
+				className="pdf-btn"
+				content={"Export to pdf"}
+			/>
 
 			<Link to="/charts">
 				<Button className="charts" variant="contained" color="info">
@@ -24,16 +31,18 @@ const Employees = () => {
 				</Button>
 			</Link>
 
+			<Filters mockData={mockData} setResultsInput={setResultsInput} />
+
 			<div className="data-table">
 				<DataGrid
-					rows={mockData}
+					rows={resultsInput}
 					columns={columns}
 					pageSize={25}
 					rowsPerPageOptions={[5]}
 					checkboxSelection
 				/>
 			</div>
-		</div>
+		</>
 	);
 };
 
