@@ -4,12 +4,12 @@
 
 .data-table {
 	position: relative;
-	top: 2rem;
-	width: 55%;
-	height: 56.25rem;
+	/* top: 1rem; */
+	width: 45%;
+	height: 56rem;
 	display: table;
 	margin: 0 auto;
-	padding: 1.5rem;
+	padding: 1rem;
 }
 
 .charts {
@@ -45,7 +45,7 @@
 	margin-bottom: 0.1rem;
 }
 
-@media screen and (width <=1000px) {
+@media screen and (max-width: 1000px) {
 	.data-table {
 		display: block;
 		float: left;
@@ -71,7 +71,7 @@
 	}
 }
 
-@media screen and (width <=450px) {
+@media screen and (max-width: 460px) {
 	.data-table {
 		display: block;
 		float: left;
