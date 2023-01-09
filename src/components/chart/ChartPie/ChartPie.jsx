@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { agentsSum } from "~/components/data/agentsSum";
 import "../Chart.css";
 
 const ChartPie = () => {
+	// console.log("🚀  agentsSum", agentsSum);
+
 	const [state, setState] = useState({
-		series: [44, 55, 13, 43, 22],
+		series: [44, 55, 13, 43, 100],
 		options: {
 			chart: {
 				width: 500,
@@ -17,7 +20,7 @@ const ChartPie = () => {
 					breakpoint: 480,
 					options: {
 						chart: {
-							width: 200,
+							width: 300,
 						},
 						legend: {
 							position: "bottom",

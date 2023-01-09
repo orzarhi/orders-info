@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import { agentsSum } from "~/components/data/agentsSum";
 import "../Chart.css";
 import "./ChartPolar.css";
 import { agentsName, agentsValue } from "./data/polarData";
 
-const ChartPolar = () => {
+const ChartPolar = ({ agents }) => {
+	const [firstRound, setFirstRound] = useState(false);
+
+	const filtered = useMemo(
+		() => agentsSum?.filter((a) => a.value === agents?.value),
+		[agents]
+	);
+
+	useEffect(() => {
+		if (!firstRound) {
+			setFirstRound(true);
+			return;
+		} else if (filtered.length === 0 || !filtered) {
+			return updateData(agentsSum);
+		}
+		updateData(filtered);
+	}, [filtered]);
+
 	const [state, setState] = useState({
 		series: agentsValue(agentsSum),
 		options: {
@@ -24,7 +41,7 @@ const ChartPolar = () => {
 					breakpoint: 480,
 					options: {
 						chart: {
-							width: 200,
+							width: 300,
 						},
 						legend: {
 							position: "bottom",
@@ -35,6 +52,15 @@ const ChartPolar = () => {
 			labels: agentsName(agentsSum),
 		},
 	});
+
+	const updateData = (data) => {
+		setState({
+			series: agentsValue(data),
+			options: {
+				labels: agentsName(data),
+			},
+		});
+	};
 
 	return (
 		<div className="chart-polar">

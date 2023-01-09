@@ -36,7 +36,7 @@ const Pdf = ({ data, content, className }) => {
 		doc.text(title, marginLeft, 40);
 		doc.autoTable(contentTable);
 
-		doc.save("report.pdf");
+		doc.save("Employees-info.pdf");
 	};
 
 	return (

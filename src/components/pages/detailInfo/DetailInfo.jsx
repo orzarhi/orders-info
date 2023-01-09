@@ -81,7 +81,7 @@ const DetailInfo = () => {
 			</section>
 			<section className="charts-wrapper">
 				<ChartLine />
-				<ChartPolar />
+				<ChartPolar agents={agents} />
 				<ChartColumn />
 				<ChartStacked />
 				<ChartPie />
