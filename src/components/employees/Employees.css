@@ -10,29 +10,31 @@
 	margin: 0 auto;
 	padding: 1rem;
 }
-
-.charts {
-	position: relative;
-	left: 4rem;
-	text-transform: capitalize !important;
-	font-family: var(--comic-font) !important;
-	font-size: 1rem !important;
+.main-btn {
+	display: flex;
+	justify-content: flex-start;
+	margin: 0.5rem;
+	width: 80%;
 }
-
-.xls-btn {
-	position: relative;
-	left: 1rem;
+.charts {
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
 	font-size: 1rem !important;
+	margin-left: 2rem !important;
 }
 
 .pdf-btn {
-	position: relative;
-	left: 2.5rem;
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
 	font-size: 1rem !important;
+	margin-left: 2.5rem !important;
+}
+
+.xls-btn {
+	text-transform: capitalize !important;
+	font-family: var(--comic-font) !important;
+	font-size: 1rem !important;
+	margin-left: 3rem !important;
 }
 
 .avatar {
@@ -59,47 +61,35 @@
 		float: left;
 		width: 100%;
 	}
-
-	.charts {
-		position: relative;
-		top: 5px;
-		left: 8.5%;
-	}
-
-	.xls {
-		position: relative;
-		top: 5px;
-		left: 9%;
-	}
-
-	.pdf {
-		position: relative;
-		top: 5px;
-		left: 9%;
-	}
 }
 
-@media screen and (max-width: 460px) {
-	.data-table {
-		display: block;
-		float: left;
-		width: 100%;
+@media screen and (max-width: 750px) {
+	.main-btn {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		flex-direction: column;
+		width: 80%;
+	}
+	.xls-btn {
+		width: 15rem !important;
+		left: 0.5rem !important;
+	}
+	.pdf-btn {
+		width: 15rem !important;
+		left: 0.6rem !important;
+	}
+	.charts {
+		width: 15rem !important;
+		left: 0.8rem !important;
 	}
 
-	.charts {
-		position: relative;
-		top: -0.5rem;
-		left: 25%;
-		width: 10rem;
-	}
 	.input-search {
-		width: 13rem !important;
-		position: relative !important;
-		left: -10% !important;
-		top: 3rem !important;
+		width: 15rem !important;
+		display: flex !important;
 	}
 	.checkbox-filter {
-		position: relative !important;
-		left: 5% !important;
+		display: flex !important;
+		justify-content: center;
 	}
 }

@@ -14,23 +14,24 @@ const Employees = () => {
 
 	return (
 		<>
-			<Xls
-				data={resultsInput}
-				className="xls-btn"
-				content={"Export to xls"}
-			/>
-			<Pdf
-				data={resultsInput}
-				className="pdf-btn"
-				content={"Export to pdf"}
-			/>
+			<div className="main-btn">
+				<Xls
+					data={resultsInput}
+					className="xls-btn"
+					content={"Export to xls"}
+				/>
+				<Pdf
+					data={resultsInput}
+					className="pdf-btn"
+					content={"Export to pdf"}
+				/>
 
-			<Link to="/charts">
-				<Button className="charts" variant="contained" color="info">
-					Go to Charts
-				</Button>
-			</Link>
-
+				<Link to="/charts">
+					<Button className="charts" variant="contained" color="info">
+						Go to Charts
+					</Button>
+				</Link>
+			</div>
 			<Filters mockData={mockData} setResultsInput={setResultsInput} />
 
 			<div className="data-table">
