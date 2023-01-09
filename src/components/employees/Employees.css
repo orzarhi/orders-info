@@ -42,19 +42,29 @@
 	border-radius: 1.5rem 2rem 1rem 5rem;
 	margin-bottom: 0.1rem;
 }
+
+.filters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .input-search {
-	position: relative !important;
-	left: 20% !important;
-	margin-top: 1rem !important;
-	padding: 1rem;
-	width: 17rem !important;
+	width: 14rem !important;
 	height: 2rem !important;
 	font-size: 1.3rem !important;
+	margin-left: 8rem !important;
 }
+
 .checkbox-filter {
-	position: relative !important;
-	left: 23% !important;
+	margin-left: 2rem !important;
 }
+@media screen and (max-width: 1530px) {
+	.data-table {
+		display: block;
+		width: 70%;
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	.data-table {
 		display: block;
@@ -91,5 +101,15 @@
 	.checkbox-filter {
 		display: flex !important;
 		justify-content: center;
+	}
+	.filters {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	.input-search {
+		width: 12rem !important;
+		right: 4rem;
+		margin: 0.5rem 0;
 	}
 }

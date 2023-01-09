@@ -18,7 +18,7 @@ const Filters = ({ mockData, setResultsInput }) => {
 	};
 
 	return (
-		<>
+		<div className="filters">
 			<Input
 				type="text"
 				className="input-search"
@@ -30,7 +30,7 @@ const Filters = ({ mockData, setResultsInput }) => {
 				className="checkbox-filter"
 				label="At work"
 			/>
-		</>
+		</div>
 	);
 };
 
