@@ -26,8 +26,12 @@ const Employees = () => {
 					content={"Export to pdf"}
 				/>
 
-				<Link to="/charts">
-					<Button className="charts" variant="contained" color="info">
+				<Link to="/charts" style={{ textDecoration: "none" }}>
+					<Button
+						className="charts-btn"
+						variant="contained"
+						color="info"
+					>
 						Go to Charts
 					</Button>
 				</Link>

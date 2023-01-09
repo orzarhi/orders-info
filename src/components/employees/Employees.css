@@ -16,7 +16,7 @@
 	margin: 0.5rem;
 	width: 80%;
 }
-.charts {
+.charts-btn {
 	text-transform: capitalize !important;
 	font-family: var(--comic-font) !important;
 	font-size: 1rem !important;
