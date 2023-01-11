@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { columns } from "~/components/data/columns";
 import Pdf from "~/components/pdf/Pdf";
 import mockData from "~/mockData";
+import TableInfo from "../data/TableInfo";
 import Xls from "../xls/Xls";
 import "./Employees.css";
 import Filters from "./Filters";
@@ -39,13 +38,7 @@ const Employees = () => {
 			<Filters mockData={mockData} setResultsInput={setResultsInput} />
 
 			<div className="data-table">
-				<DataGrid
-					rows={resultsInput}
-					columns={columns}
-					pageSize={25}
-					rowsPerPageOptions={[5]}
-					checkboxSelection
-				/>
+				<TableInfo data={resultsInput} setData={setResultsInput} />
 			</div>
 		</>
 	);
