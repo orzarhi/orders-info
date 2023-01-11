@@ -5,15 +5,6 @@
 	margin: 2rem;
 	animation: fade-slide-down 1s ease-out forwards;
 }
-
-.squares-info-wrapper {
-	display: flex;
-	justify-content: center;
-	gap: 2.5rem;
-	margin: 1rem;
-	flex-direction: row-reverse;
-	animation: fade-blur-in 1s ease-out forwards;
-}
 @keyframes fade-slide-down {
 	from {
 		opacity: 0;
@@ -25,6 +16,15 @@
 		transform: translateY(0);
 	}
 }
+.squares-info-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	margin: 1rem;
+	flex-direction: row-reverse;
+	animation: fade-blur-in 1s ease-out forwards;
+}
+
 @keyframes fade-blur-in {
 	from {
 		opacity: 0;

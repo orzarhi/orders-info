@@ -20,6 +20,7 @@ const Table = ({ data, setData }) => {
 			field: "avatar",
 			headerName: "Avatar",
 			width: 100,
+
 			renderCell: (params) => {
 				return (
 					<img
@@ -60,7 +61,7 @@ const Table = ({ data, setData }) => {
 					<>
 						<IconButton
 							title="Edit"
-							onClick={() => console.log(params.row)}
+							// onClick={() => console.log(params.row)}
 						>
 							<MdOutlineModeEdit />
 						</IconButton>
@@ -83,6 +84,14 @@ const Table = ({ data, setData }) => {
 				columns={columnsData}
 				pageSize={25}
 				rowsPerPageOptions={[5]}
+				sx={{
+					boxShadow: 5,
+					border: 1,
+					borderColor: "primary.light",
+					"& .MuiDataGrid-cell:hover": {
+						color: "primary.main",
+					},
+				}}
 			/>
 			{openModal && (
 				<Modal

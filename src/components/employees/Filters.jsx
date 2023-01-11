@@ -8,7 +8,7 @@ const Filters = ({ mockData, setData }) => {
 	const searchName = (value) => {
 		setData(
 			mockData?.filter((e) =>
-				e.name.toLowerCase().includes(value.toLowerCase())
+				e.name.toLowerCase().includes(value?.toLowerCase())
 			)
 		);
 	};
@@ -22,7 +22,7 @@ const Filters = ({ mockData, setData }) => {
 			<Input
 				type="text"
 				className="input-search"
-				placeholder="Search by name..."
+				placeholder="Search Name..."
 				onChange={(e) => searchName(e.target.value)}
 			/>
 			<FormControlLabel
