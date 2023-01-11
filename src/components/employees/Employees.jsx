@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "~/components/pdf/Pdf";
 import mockData from "~/mockData";
-import TableInfo from "../data/TableInfo";
+import Table from "../table/Table";
 import Xls from "../xls/Xls";
 import "./Employees.css";
 import Filters from "./Filters";
@@ -35,10 +35,10 @@ const Employees = () => {
 					</Button>
 				</Link>
 			</div>
-			<Filters mockData={mockData} setResultsInput={setResultsInput} />
+			<Filters mockData={mockData} setData={setResultsInput} />
 
 			<div className="data-table">
-				<TableInfo data={resultsInput} setData={setResultsInput} />
+				<Table data={resultsInput} setData={setResultsInput} />
 			</div>
 		</>
 	);

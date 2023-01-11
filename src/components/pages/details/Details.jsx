@@ -15,11 +15,11 @@ import {
 	ChartPolar,
 	ChartStacked,
 } from "~/components/chart/index";
-import "./DetailInfo.css";
+import "./Details.css";
 import orders from "~/components/data/orders";
-import { ordersData } from "~/components/inputs/inputData";
+import { ordersData } from "~/components/inputs/config";
 
-const DetailInfo = () => {
+const Details = () => {
 	const [customer, setCustomer] = useState("");
 	const [agents, setAgents] = useState("");
 	const [category, setCategory] = useState("");
@@ -92,4 +92,4 @@ const DetailInfo = () => {
 	);
 };
 
-export default DetailInfo;
+export default Details;

@@ -23,7 +23,7 @@ const Pdf = ({ data, content, className }) => {
 			e.id,
 			e.name,
 			e.date_birth,
-			e.salary,
+			e.salary.toLocaleString(),
 			e.at_work,
 		]);
 

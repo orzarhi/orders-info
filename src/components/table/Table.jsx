@@ -2,10 +2,11 @@ import { IconButton } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import { MdDeleteForever, MdOutlineModeEdit } from "react-icons/md";
-import { deleteEmp } from "../actionsData/actions";
-import Modal from "../ui/Modal";
+import { deleteEmp } from "../services/deleteEmp";
+import Modal from "../modal/Modal";
+import { atWork } from "~/utils/atWork/atWork";
 
-const TableInfo = ({ data, setData }) => {
+const Table = ({ data, setData }) => {
 	const [openModal, setOpenModal] = useState(false);
 	const [employeeId, setEmployeeId] = useState("");
 
@@ -40,7 +41,14 @@ const TableInfo = ({ data, setData }) => {
 				return params.row.salary.toLocaleString();
 			},
 		},
-		{ field: "at_work", headerName: "At Work", width: 100 },
+		{
+			field: "at_work",
+			headerName: "At Work",
+			width: 100,
+			renderCell: (params) => {
+				return atWork(params.row.at_work);
+			},
+		},
 		{
 			field: "actions",
 			headerName: "Actions",
@@ -81,8 +89,6 @@ const TableInfo = ({ data, setData }) => {
 					setOpenModal={setOpenModal}
 					onClick={() => deleteEmp(employeeId, setData)}
 					title={"Are you sure?"}
-					disableButton={true}
-					setDisableButton={true}
 					textButton={"Delete"}
 				/>
 			)}
@@ -90,4 +96,4 @@ const TableInfo = ({ data, setData }) => {
 	);
 };
 
-export default TableInfo;
+export default Table;
