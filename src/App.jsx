@@ -11,7 +11,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Main />} exact />
 				<Route path="/charts" element={<Details />} exact />
-				<Route path="/*" element={<PageNotFound />} exact />
+				<Route path="*" element={<PageNotFound />} exact />
 			</Routes>
 		</>
 	);
