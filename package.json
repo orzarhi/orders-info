@@ -19,6 +19,7 @@
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.28",
     "lodash": "^4.17.21",
+    "notyf": "^3.10.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",

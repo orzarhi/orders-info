@@ -60,13 +60,13 @@
 	margin-left: 2rem !important;
 }
 @media screen and (max-width: 1530px) {
-	.data-table {
-		display: block;
-		width: 70%;
-	}
 }
 
 @media screen and (max-width: 1000px) {
+	.data-table {
+		display: block;
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 750px) {
