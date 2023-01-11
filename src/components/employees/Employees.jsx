@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Pdf from "~/components/pdf/Pdf";
+import Pdf from "~/components/documents/pdf/Pdf";
 import mockData from "~/mockData";
 import Table from "../table/Table";
-import Xls from "../xls/Xls";
+import Xls from "../documents/xls/Xls";
 import "./Employees.css";
 import Filters from "./Filters";
 

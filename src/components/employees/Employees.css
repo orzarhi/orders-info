@@ -59,10 +59,21 @@
 .checkbox-filter {
 	margin-left: 2rem !important;
 }
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1700px) {
+	.data-table {
+		display: block;
+		width: 60%;
+	}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1430px) {
+	.data-table {
+		display: block;
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 1100px) {
 	.data-table {
 		display: block;
 		width: 100%;
@@ -70,11 +81,15 @@
 }
 
 @media screen and (max-width: 750px) {
+	.data-table {
+		display: block;
+		width: 100%;
+	}
 	.main-btn {
 		display: flex;
-		gap: 1rem;
 		align-items: center;
 		flex-direction: column;
+		gap: 1rem;
 		width: 80%;
 	}
 	.xls-btn {
@@ -97,6 +112,7 @@
 	.checkbox-filter {
 		display: flex !important;
 		justify-content: center;
+		margin-left: 1rem !important;
 	}
 	.filters {
 		display: flex;

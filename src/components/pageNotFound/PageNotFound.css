@@ -1,0 +1,33 @@
+.page-not-found {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem;
+	font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+	animation: fade-blur-in 1s ease-out forwards;
+}
+
+.title {
+	display: block;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.message {
+	text-align: center;
+	display: block;
+	font-size: 2.3rem;
+}
+
+@keyframes fade-blur-in {
+	from {
+		opacity: 0;
+		filter: blur(1rem);
+	}
+
+	to {
+		opacity: 1;
+	}
+}
