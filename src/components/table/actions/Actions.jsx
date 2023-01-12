@@ -1,8 +1,8 @@
 import React from "react";
-import FormEdit from "../formEdit/FormEdit";
-import { deleteEmp } from "../services/deleteEmp";
-import Modal from "../ui/modalDialog/ModalDialog";
-import PopUp from "../ui/popUp/PopUp";
+import Form from "../../form/Form";
+import { deleteEmp } from "../../services/deleteEmp";
+import Modal from "../../ui/modalDialog/ModalDialog";
+import PopUp from "../../ui/popUp/PopUp";
 
 const Actions = ({
 	openModal,
@@ -24,7 +24,7 @@ const Actions = ({
 			)}
 			{openPopUpEdit && (
 				<PopUp setOpenPopUpEdit={setOpenPopUpEdit}>
-					<FormEdit title={"Edit"} onClick={() => alert("test")} />
+					<Form title={"Edit"} onClick={() => alert("test")} />
 				</PopUp>
 			)}
 		</>

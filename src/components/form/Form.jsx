@@ -1,12 +1,9 @@
 import { IconButton, TextField } from "@mui/material";
 import React from "react";
-import { MdOutlineModeEdit } from "react-icons/md";
-import "./FormEdit.css";
+import { MdDone } from "react-icons/md";
+import "./Form.css";
 
-const FormEdit = ({ title, onClick }) => {
-	const editRow = () => {
-		console.log("Test Edit");
-	};
+const Form = ({ title, onClick }) => {
 	return (
 		<>
 			<span className="title-edit">{title}</span>
@@ -20,11 +17,11 @@ const FormEdit = ({ title, onClick }) => {
 			</div>
 			<div className="icon-edit-wrapper">
 				<IconButton className="icon-edit" onClick={onClick}>
-					<MdOutlineModeEdit />
+					<MdDone />
 				</IconButton>
 			</div>
 		</>
 	);
 };
 
-export default FormEdit;
+export default Form;

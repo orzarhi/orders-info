@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "~/components/documents/pdf/Pdf";
 import mockData from "~/mockData";
-import Table from "../table/Table";
 import Xls from "../documents/xls/Xls";
+import Table from "../table/Table";
 import "./Employees.css";
 import Filters from "./Filters";
-import FormEdit from "../formEdit/FormEdit";
 
 const Employees = () => {
 	const [resultsInput, setResultsInput] = useState(mockData);

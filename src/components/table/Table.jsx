@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import { MdDeleteForever, MdOutlineModeEdit } from "react-icons/md";
 import { atWork } from "~/utils/atWork/atWork";
-import Actions from "../actions/Actions";
+import Actions from "./actions/Actions";
 
 const Table = ({ data, setData }) => {
 	const [openModalDialog, setOpenModalDialog] = useState(false);
