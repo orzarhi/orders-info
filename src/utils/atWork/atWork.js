@@ -1,3 +1,1 @@
-export const atWork = (employee) => {
-	return employee ? "✅" : "❌";
-};
+export const atWork = (employee) => (employee ? "✅" : "❌");

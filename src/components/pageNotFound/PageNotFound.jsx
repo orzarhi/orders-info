@@ -15,7 +15,7 @@ const PageNotFound = () => {
 
 	return (
 		<div className="page-not-found">
-			<span className="title">
+			<span className="title-not-found">
 				Oops... <span style={{ color: "#dc3535e1" }}>404</span> Page
 			</span>
 			<span className="message">

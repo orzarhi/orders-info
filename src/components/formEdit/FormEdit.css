@@ -1,0 +1,30 @@
+.inputs-edit-wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 2rem;
+}
+.icon-edit-wrapper {
+	font-size: 2rem;
+	background-color: white;
+	width: 9%;
+	border-radius: 20px;
+	cursor: pointer;
+	position: relative;
+	left: 0.1rem;
+	bottom: 0.3rem;
+}
+.icon-edit {
+	position: relative;
+	left: 0.4rem;
+	background-color: rgba(11, 111, 144, 0.642) !important;
+	color: white !important;
+	font-size: 2rem !important;
+}
+
+.title-edit {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+}

@@ -2,17 +2,22 @@ import { IconButton } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import { MdDeleteForever, MdOutlineModeEdit } from "react-icons/md";
-import { deleteEmp } from "../services/deleteEmp";
-import Modal from "../modal/Modal";
 import { atWork } from "~/utils/atWork/atWork";
+import Actions from "../actions/Actions";
 
 const Table = ({ data, setData }) => {
-	const [openModal, setOpenModal] = useState(false);
+	const [openModalDialog, setOpenModalDialog] = useState(false);
+	const [openPopUpEdit, setOpenPopUpEdit] = useState(false);
 	const [employeeId, setEmployeeId] = useState("");
 
-	const deleteRow = (id) => {
-		setOpenModal(true);
-		setEmployeeId(id);
+	const actionRow = (id, action) => {
+		if (action === "delete") {
+			setOpenModalDialog(true);
+			setEmployeeId(id);
+		} else {
+			setOpenPopUpEdit(true);
+			setEmployeeId(id);
+		}
 	};
 
 	const columnsData = [
@@ -61,13 +66,13 @@ const Table = ({ data, setData }) => {
 					<>
 						<IconButton
 							title="Edit"
-							// onClick={() => console.log(params.row)}
+							onClick={() => actionRow(params.row.id, "edit")}
 						>
 							<MdOutlineModeEdit />
 						</IconButton>
 						<IconButton
 							title="Remove"
-							onClick={() => deleteRow(params.row.id)}
+							onClick={() => actionRow(params.row.id, "delete")}
 						>
 							<MdDeleteForever />
 						</IconButton>
@@ -93,14 +98,14 @@ const Table = ({ data, setData }) => {
 					},
 				}}
 			/>
-			{openModal && (
-				<Modal
-					setOpenModal={setOpenModal}
-					onClick={() => deleteEmp(employeeId, setData)}
-					title={"Are you sure?"}
-					textButton={"Delete"}
-				/>
-			)}
+			<Actions
+				openModal={openModalDialog}
+				setOpenModal={setOpenModalDialog}
+				employeeId={employeeId}
+				setData={setData}
+				openPopUpEdit={openPopUpEdit}
+				setOpenPopUpEdit={setOpenPopUpEdit}
+			/>
 		</>
 	);
 };

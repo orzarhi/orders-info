@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import "./Modal.css";
+import "./ModalDialog.css";
 
 const Modal = ({ title, setOpenModal, onClick }) => {
 	return (

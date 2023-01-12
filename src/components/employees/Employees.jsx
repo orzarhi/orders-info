@@ -7,6 +7,7 @@ import Table from "../table/Table";
 import Xls from "../documents/xls/Xls";
 import "./Employees.css";
 import Filters from "./Filters";
+import FormEdit from "../formEdit/FormEdit";
 
 const Employees = () => {
 	const [resultsInput, setResultsInput] = useState(mockData);
