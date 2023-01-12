@@ -1,8 +1,8 @@
 import React from "react";
 import Form from "../../form/Form";
 import { deleteEmp } from "../../services/deleteEmp";
-import Modal from "../../ui/modalDialog/ModalDialog";
-import PopUp from "../../ui/popUp/PopUp";
+import Modal from "~/components/ui/modalDialog/ModalDialog";
+import PopUp from "~/components/ui/popUp/PopUp";
 
 const Actions = ({
 	openModal,
@@ -11,6 +11,7 @@ const Actions = ({
 	setData,
 	openPopUpEdit,
 	setOpenPopUpEdit,
+	setOpenAction,
 }) => {
 	return (
 		<>
@@ -20,11 +21,18 @@ const Actions = ({
 					onClick={() => deleteEmp(employeeId, setData)}
 					title={"Are you sure?"}
 					textButton={"Delete"}
+					setOpenAction={setOpenAction}
 				/>
 			)}
 			{openPopUpEdit && (
-				<PopUp setOpenPopUpEdit={setOpenPopUpEdit}>
-					<Form title={"Edit"} onClick={() => alert("test")} />
+				<PopUp
+					setOpenPopUpEdit={setOpenPopUpEdit}
+					setOpenAction={setOpenAction}
+				>
+					<Form
+						title={"Edit"}
+						onClick={() => alert("id: " + employeeId)}
+					/>
 				</PopUp>
 			)}
 		</>

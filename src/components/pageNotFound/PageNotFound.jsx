@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PageNotFound.css";
+
 const PageNotFound = () => {
 	const [timer, setTimer] = useState(5);
 	const navigate = useNavigate();

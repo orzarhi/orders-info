@@ -8,12 +8,12 @@ const Form = ({ title, onClick }) => {
 		<>
 			<span className="title-edit">{title}</span>
 			<div className="inputs-edit-wrapper">
-				<TextField placeholder="test" />
-				<TextField placeholder="test2" />
-				<TextField placeholder="test3" />
-				<TextField placeholder="test4" />
-				<TextField placeholder="test5" />
-				<TextField placeholder="test6" />
+				<TextField label="test" />
+				<TextField label="test" />
+				<TextField label="test" />
+				<TextField label="test" />
+				<TextField label="test" />
+				<TextField label="test" />
 			</div>
 			<div className="icon-edit-wrapper">
 				<IconButton className="icon-edit" onClick={onClick}>

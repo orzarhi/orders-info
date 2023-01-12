@@ -1,15 +1,19 @@
 import { Button } from "@mui/material";
 import "./ModalDialog.css";
 
-const Modal = ({ title, setOpenModal, onClick }) => {
+const Modal = ({ title, setOpenModal, onClick, setOpenAction }) => {
 	return (
-		<div className="modal" onClick={() => setOpenModal(false)}>
+		<div
+			className="modal"
+			onClick={() => {
+				setOpenModal(false);
+				setOpenAction(false);
+			}}
+		>
 			<div className="modal-container">
 				<div
 					className="modal-close"
-					onClick={() => {
-						setOpenModal(false);
-					}}
+					onClick={() => setOpenModal(false)}
 				>
 					&times;
 				</div>

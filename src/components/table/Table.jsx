@@ -8,16 +8,16 @@ import Actions from "./actions/Actions";
 const Table = ({ data, setData }) => {
 	const [openModalDialog, setOpenModalDialog] = useState(false);
 	const [openPopUpEdit, setOpenPopUpEdit] = useState(false);
+	const [openAction, setOpenAction] = useState(false);
 	const [employeeId, setEmployeeId] = useState("");
 
 	const actionRow = (id, action) => {
 		if (action === "delete") {
 			setOpenModalDialog(true);
-			setEmployeeId(id);
-		} else {
-			setOpenPopUpEdit(true);
-			setEmployeeId(id);
-		}
+		} else setOpenPopUpEdit(true);
+
+		setEmployeeId(id);
+		setOpenAction(true);
 	};
 
 	const columnsData = [
@@ -98,14 +98,17 @@ const Table = ({ data, setData }) => {
 					},
 				}}
 			/>
-			<Actions
-				openModal={openModalDialog}
-				setOpenModal={setOpenModalDialog}
-				employeeId={employeeId}
-				setData={setData}
-				openPopUpEdit={openPopUpEdit}
-				setOpenPopUpEdit={setOpenPopUpEdit}
-			/>
+			{openAction && (
+				<Actions
+					openModal={openModalDialog}
+					setOpenModal={setOpenModalDialog}
+					employeeId={employeeId}
+					setData={setData}
+					openPopUpEdit={openPopUpEdit}
+					setOpenPopUpEdit={setOpenPopUpEdit}
+					setOpenAction={setOpenAction}
+				/>
+			)}
 		</>
 	);
 };
