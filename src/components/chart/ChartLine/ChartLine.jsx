@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import mockData from "../../../mockData";
 import "../Chart.css";
-const ChartLineDemo = () => {
+import { customerName, customerSalary } from "./config";
+const ChartLineDemo = ({ customer }) => {
+	const [firstRound, setFirstRound] = useState(false);
+
 	const name = mockData.map((m) => m.name);
 	const salary = mockData.map((m) => m.salary);
+
+	const filtered = useMemo(
+		() => mockData?.filter((a) => a.name === customer),
+		[customer]
+	);
+
+	useEffect(() => {
+		if (!firstRound) {
+			setFirstRound(true);
+			return;
+		} else if (filtered.length === 0 || !filtered) {
+			return updateData(mockData);
+		}
+		updateData(filtered);
+	}, [filtered]);
 
 	const [state, setState] = useState({
 		series: [
@@ -58,6 +76,21 @@ const ChartLineDemo = () => {
 			},
 		},
 	});
+	const updateData = (data) => {
+		setState({
+			series: [
+				{
+					name: "Salary",
+					data: customerSalary(data),
+				},
+			],
+			options: {
+				xaxis: {
+					categories: customerName(data),
+				},
+			},
+		});
+	};
 
 	return (
 		<>

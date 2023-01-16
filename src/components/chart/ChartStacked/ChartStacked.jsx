@@ -1,11 +1,7 @@
 import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import orders from "~/components/data/orders";
-import {
-	countLeftInStock,
-	countOrdered,
-	ordersDataName,
-} from "./data/stackedData";
+import { countLeftInStock, countOrdered, ordersDataName } from "./config";
 import "../Chart.css";
 
 const ChartStacked = () => {

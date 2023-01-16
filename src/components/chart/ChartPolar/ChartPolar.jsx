@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts";
 import { agentsSum } from "~/components/data/agentsSum";
 import "../Chart.css";
 import "./ChartPolar.css";
-import { agentsName, agentsValue } from "./data/polarData";
+import { agentsName, agentsValue } from "./config";
 
 const ChartPolar = ({ agents }) => {
 	const [firstRound, setFirstRound] = useState(false);

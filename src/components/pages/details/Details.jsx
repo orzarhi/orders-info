@@ -18,19 +18,25 @@ import {
 import "./Details.css";
 import orders from "~/components/data/orders";
 import { ordersData } from "~/components/inputs/config";
+import mockData from "~/mockData";
+import mockDate from "~/mockDate";
+import DatePicker from "~/components/dateRange/DatePicker_Old";
 
 const Details = () => {
+	const name = mockData.map((m) => m.name);
+
 	const [customer, setCustomer] = useState("");
 	const [agents, setAgents] = useState("");
 	const [category, setCategory] = useState("");
 	const [time, setTime] = useState("");
 
+	//	{time?.value === 50 &&}
 	return (
 		<>
 			<section className="inputs-selects-wrapper">
 				<InputSelect
 					title={"תקופה"}
-					options={agentsSum}
+					options={mockDate}
 					value={time}
 					setValue={setTime}
 				/>
@@ -48,11 +54,14 @@ const Details = () => {
 				/>
 				<InputSelect
 					title={"לקוח"}
-					options={agentsSum}
+					options={name}
 					value={customer}
 					setValue={setCustomer}
 				/>
 			</section>
+			{/* <section className="date-picker-wrapper">
+				<DatePicker />
+			</section> */}
 			<section className="squares-info-wrapper">
 				<SquareInfo
 					content={"סך מכירות"}
@@ -80,7 +89,7 @@ const Details = () => {
 				/>
 			</section>
 			<section className="charts-wrapper">
-				<ChartLine />
+				<ChartLine customer={customer} />
 				<ChartPolar agents={agents} />
 				<ChartColumn />
 				<ChartStacked />

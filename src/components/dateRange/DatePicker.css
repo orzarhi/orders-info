@@ -1,0 +1,9 @@
+.date-picker {
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	padding: 5px;
+	/* box-shadow: 2px 3px 6px 2px #a09e9eae; */
+}

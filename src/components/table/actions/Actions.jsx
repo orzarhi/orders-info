@@ -26,7 +26,7 @@ const Actions = ({
 			)}
 			{openPopUpEdit && (
 				<PopUp
-					setOpenPopUpEdit={setOpenPopUpEdit}
+					setOpenPopUp={setOpenPopUpEdit}
 					setOpenAction={setOpenAction}
 				>
 					<Form

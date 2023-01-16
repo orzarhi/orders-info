@@ -1,14 +1,14 @@
 import React from "react";
 import "./PopUp.css";
 
-const PopUp = ({ children, setOpenPopUpEdit, setOpenAction }) => {
+const PopUp = ({ children, setOpenPopUp, setOpenAction }) => {
 	return (
 		<div className="modal">
 			<div className="modal-container">
 				<div
 					className="modal-close"
 					onClick={() => {
-						setOpenPopUpEdit(false);
+						setOpenPopUp(false);
 						setOpenAction(false);
 					}}
 				>

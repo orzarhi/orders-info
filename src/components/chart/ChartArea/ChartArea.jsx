@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import mockData from "~/mockData";
 import "../Chart.css";
 const ChartArea = () => {
+	const name = mockData.map((m) => m.name);
+	const salary = mockData.map((m) => m.salary);
+
 	const [state, setState] = useState({
 		series: [
 			{
-				name: "STOCK ABC",
-				data: [44, 55, 13, 43, 22],
+				name: "Salary",
+				data: salary,
 			},
 		],
 		options: {
@@ -33,7 +37,7 @@ const ChartArea = () => {
 				text: "Price Movements",
 				align: "left",
 			},
-			labels: ["A", "B", "C", "D", "E"],
+			labels: name,
 			xaxis: {
 				type: "number",
 			},

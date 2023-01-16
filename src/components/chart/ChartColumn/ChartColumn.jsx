@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import mockData from "~/mockData";
 import orders from "../../data/orders";
 import "../Chart.css";
 const ChartColumn = () => {
+	const name = mockData.map((m) => m.name);
+	const salary = mockData.map((m) => m.salary);
+
 	const [state, setState] = useState({
 		series: [
 			{
-				name: "Net Profit",
-				data: [44, 55, 57, 56, 61, 58, 63, 60],
+				name: "Salary",
+				data: salary,
 			},
 		],
 
@@ -33,16 +37,7 @@ const ChartColumn = () => {
 				colors: ["transparent"],
 			},
 			xaxis: {
-				categories: [
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-					"בדיקה",
-				],
+				categories: name,
 			},
 
 			fill: {

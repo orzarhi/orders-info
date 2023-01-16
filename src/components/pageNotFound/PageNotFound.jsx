@@ -9,7 +9,7 @@ const PageNotFound = () => {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			if (timer > 1) setTimer((prev) => prev - 1);
-			else navigate("/");
+			else navigate("..");
 		}, 1000);
 		return () => clearTimeout(timeout);
 	}, [timer]);

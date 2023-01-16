@@ -7,14 +7,13 @@ import Actions from "./actions/Actions";
 
 const Table = ({ data, setData }) => {
 	const [openModalDialog, setOpenModalDialog] = useState(false);
-	const [openPopUpEdit, setOpenPopUpEdit] = useState(false);
+	const [openPopUp, setOpenPopUp] = useState(false);
 	const [openAction, setOpenAction] = useState(false);
 	const [employeeId, setEmployeeId] = useState("");
 
 	const actionRow = (id, action) => {
-		if (action === "delete") {
-			setOpenModalDialog(true);
-		} else setOpenPopUpEdit(true);
+		if (action === "delete") setOpenModalDialog(true);
+		else if (action === "edit") setOpenPopUp(true);
 
 		setEmployeeId(id);
 		setOpenAction(true);
@@ -104,8 +103,8 @@ const Table = ({ data, setData }) => {
 					setOpenModal={setOpenModalDialog}
 					employeeId={employeeId}
 					setData={setData}
-					openPopUpEdit={openPopUpEdit}
-					setOpenPopUpEdit={setOpenPopUpEdit}
+					openPopUpEdit={openPopUp}
+					setOpenPopUpEdit={setOpenPopUp}
 					setOpenAction={setOpenAction}
 				/>
 			)}

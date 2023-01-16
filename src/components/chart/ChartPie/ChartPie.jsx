@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import { agentsSum } from "~/components/data/agentsSum";
+import mockData from "~/mockData";
 import "../Chart.css";
 
 const ChartPie = () => {
-	// console.log("🚀  agentsSum", agentsSum);
+	const name = mockData.map((m) => m.name);
+	const salary = mockData.map((m) => m.salary);
 
 	const [state, setState] = useState({
-		series: [44, 55, 13, 43, 100],
+		series: salary,
 		options: {
 			chart: {
 				width: 500,
 				type: "pie",
 				redrawOnWindowResize: true,
 			},
-			labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+			labels: name,
 			responsive: [
 				{
 					breakpoint: 480,
