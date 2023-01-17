@@ -8,9 +8,9 @@ const Xls = ({ data, className, content }) => {
 		var wb = XLSX.utils.book_new(),
 			ws = XLSX.utils.json_to_sheet(data);
 
-		XLSX.utils.book_append_sheet(wb, ws, "employees-info");
+		XLSX.utils.book_append_sheet(wb, ws, "Orders");
 
-		XLSX.writeFile(wb, "employees-info.xlsx");
+		XLSX.writeFile(wb, "Orders.xlsx");
 	};
 	return (
 		<Button

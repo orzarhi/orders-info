@@ -15,12 +15,12 @@ import {
 	ChartPolar,
 	ChartStacked,
 } from "~/components/chart/index";
-import "./Details.css";
-import orders from "~/components/data/orders";
-import { ordersData } from "~/components/inputs/config";
+import ordersData from "~/components/data/orders";
+import { ordersMap } from "~/components/inputs/config";
 import mockData from "~/mockData";
 import mockDate from "~/mockDate";
 import DatePicker from "~/components/dateRange/DatePicker_Old";
+import "./Details.css";
 
 const Details = () => {
 	const name = mockData.map((m) => m.name);
@@ -30,7 +30,6 @@ const Details = () => {
 	const [category, setCategory] = useState("");
 	const [time, setTime] = useState("");
 
-	//	{time?.value === 50 &&}
 	return (
 		<>
 			<section className="inputs-selects-wrapper">
@@ -42,7 +41,7 @@ const Details = () => {
 				/>
 				<InputSelect
 					title={"קטגוריה"}
-					options={ordersData(orders)}
+					options={ordersMap(ordersData)}
 					value={category}
 					setValue={setCategory}
 				/>

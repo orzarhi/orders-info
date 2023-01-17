@@ -1,4 +1,4 @@
-export const ordersData = (orders) => {
+export const ordersMap = (orders) => {
 	const categoryData = orders
 		.flatMap((o) => o.data.topItemsLeftInStock)
 		.map((i) => ({ label: i.name, value: i.id }));

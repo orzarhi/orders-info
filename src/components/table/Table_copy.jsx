@@ -21,43 +21,39 @@ const Table = ({ data, setData }) => {
 
 	const columnsData = [
 		{
-			field: "avatar",
-			headerName: "Avatar",
-			width: 100,
-
+			field: "CUSTNAME",
+			headerName: "Cuset Name",
+			width: 150,
+		},
+		{ field: "CDES", headerName: "Cdes", width: 150 },
+		{
+			field: "CURDATE",
+			headerName: "Curdate",
+			width: 150,
 			renderCell: (params) => {
-				return (
-					<img
-						className="avatar"
-						src={params.row.avatar}
-						alt={`image - ${params.row.name}`}
-					/>
-				);
+				return new Date(params.row.CURDATE).toLocaleDateString();
 			},
 		},
-		{ field: "id", headerName: "ID", width: 100 },
-		{ field: "name", headerName: "Full Name", width: 150 },
-		{ field: "date_birth", headerName: "Date Birth", width: 140 },
+		{ field: "ORDNAME", headerName: "Ordname", width: 150 },
 		{
-			field: "salary",
-			headerName: "Salary",
-			width: 130,
-			renderCell: (params) => {
-				return params.row.salary.toLocaleString();
-			},
+			field: "ORDSTATUSDES",
+			headerName: "מצב הזמנה",
+			width: 150,
 		},
 		{
-			field: "at_work",
-			headerName: "At Work",
-			width: 100,
-			renderCell: (params) => {
-				return atWork(params.row.at_work);
-			},
+			field: "TOTQUANT",
+			headerName: "סהכ כמות",
+			width: 150,
+		},
+		{
+			field: "QPRICE",
+			headerName: "סהכ מחיר",
+			width: 150,
 		},
 		{
 			field: "actions",
-			headerName: "Actions",
-			width: 100,
+			headerName: "פעולות",
+			width: 150,
 			sortable: false,
 			disableColumnMenu: true,
 			renderCell: (params) => {
@@ -65,13 +61,17 @@ const Table = ({ data, setData }) => {
 					<>
 						<IconButton
 							title="Edit"
-							onClick={() => actionRow(params.row.id, "edit")}
+							onClick={() =>
+								actionRow(params.row.ORDNAME, "edit")
+							}
 						>
 							<MdOutlineModeEdit />
 						</IconButton>
 						<IconButton
 							title="Remove"
-							onClick={() => actionRow(params.row.id, "delete")}
+							onClick={() =>
+								actionRow(params.row.ORDNAME, "delete")
+							}
 						>
 							<MdDeleteForever />
 						</IconButton>
@@ -96,6 +96,7 @@ const Table = ({ data, setData }) => {
 						color: "primary.main",
 					},
 				}}
+				getRowId={(row) => row.ORDNAME}
 			/>
 			{openAction && (
 				<Actions

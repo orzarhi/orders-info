@@ -4,11 +4,13 @@
 
 .data-table {
 	position: relative;
-	width: 50%;
-	height: 56rem;
+	width: 67%;
+	height: 50rem;
 	display: table;
 	margin: 0 auto;
-	padding: 1rem;
+	padding: 0.3rem;
+	/* border: 1px solid;
+	box-shadow: 2px 3px 6px 2px #a09e9ee0; */
 }
 .main-btn {
 	display: flex;
@@ -50,19 +52,37 @@
 }
 
 .input-search {
-	width: 14rem !important;
+	position: relative;
+	bottom: 2rem;
+	direction: rtl;
+	width: 15rem !important;
 	height: 2rem !important;
 	font-size: 1.3rem !important;
-	margin-left: 8rem !important;
-}
-
-.checkbox-filter {
 	margin-left: 2rem !important;
 }
-@media screen and (max-width: 1700px) {
+.input-select-search {
+	position: relative;
+	bottom: 2rem;
+	direction: rtl;
+	width: 15rem !important;
+	height: 2rem !important;
+	font-size: 1.3rem !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+	direction: rtl !important;
+}
+/* @media screen and (max-width: 1700px) {
 	.data-table {
 		display: block;
 		width: 60%;
+	}
+	.main-btn {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+		width: 80%;
 	}
 }
 
@@ -78,9 +98,9 @@
 		display: block;
 		width: 100%;
 	}
-}
+} */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1250px) {
 	.data-table {
 		display: block;
 		width: 100%;
@@ -118,10 +138,16 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		margin: 1.5rem 0;
 	}
 	.input-search {
+		position: relative;
+		right: 1rem;
 		width: 12rem !important;
-		right: 4rem;
-		margin: 0.5rem 0;
+		margin-top: 2rem !important;
+	}
+	.input-select-search {
+		width: 12rem !important;
+		margin-top: 2rem !important;
 	}
 }

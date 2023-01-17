@@ -1,8 +1,8 @@
 import React from "react";
-import Employees from "~/components/employees/Employees";
+import Orders from "~/components/orders/Orders";
 
 const Main = () => {
-	return <Employees />;
+	return <Orders />;
 };
 
 export default Main;

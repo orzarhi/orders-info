@@ -3,7 +3,7 @@ import { queryKeys } from "~/constants";
 import { getOreders } from "~/api/orders/orders";
 
 export const useOrders = () => {
-	const { data, isLoading } = useQuery([queryKeys.orders], getOreders);
+	const { data, isLoading } = useQuery([queryKeys.orders], getOreders());
 
 	return { data, isLoading };
 };
