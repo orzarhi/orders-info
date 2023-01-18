@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import { agentsSum } from "~/components/data/agentsSum";
-import mockData from "~/mockData";
+import ordersNew from "~/components/data/ordersNew";
 import "../Chart.css";
+import { customerName, customerSum } from "./config";
 
-const ChartPie = () => {
-	const name = mockData.map((m) => m.name);
-	const salary = mockData.map((m) => m.salary);
+const ChartPie = ({ customer }) => {
+	const [firstRound, setFirstRound] = useState(false);
+
+	const name = ordersNew.map((m) => m.CDES);
+	const sum = ordersNew.map((m) => m.QPRICE);
+
+	const filtered = useMemo(
+		() => ordersNew?.filter((a) => a.CDES === customer),
+		[customer]
+	);
+
+	useEffect(() => {
+		if (!firstRound) {
+			setFirstRound(true);
+			return;
+		} else if (filtered.length === 0 || !filtered) {
+			return updateData(ordersNew);
+		}
+		updateData(filtered);
+	}, [filtered]);
 
 	const [state, setState] = useState({
-		series: salary,
+		series: sum,
 		options: {
 			chart: {
 				width: 500,
@@ -33,6 +50,14 @@ const ChartPie = () => {
 		},
 	});
 
+	const updateData = (data) => {
+		setState({
+			series: customerSum(data),
+			options: {
+				labels: customerName(data),
+			},
+		});
+	};
 	return (
 		<div className="chart-pie">
 			<ReactApexChart

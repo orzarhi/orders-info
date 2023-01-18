@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ordersData from "../data/ordersNew";
 import Xls from "../documents/xls/Xls";
+import { useOrders } from "../hooks/useOrders";
 import CollapsibleTable from "../table/CollapsibleTable";
 import Filters from "./Filters";
-import "./Orders.css";
+import "./Home.css";
 
 const Orders = () => {
 	const [resultsInput, setResultsInput] = useState(ordersData);

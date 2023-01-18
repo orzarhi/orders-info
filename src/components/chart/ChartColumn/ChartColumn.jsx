@@ -1,17 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import mockData from "~/mockData";
-import ordersData from "../../data/ordersNew";
+import ordersNew from "~/components/data/ordersNew";
 import "../Chart.css";
-const ChartColumn = () => {
-	const name = mockData.map((m) => m.name);
-	const salary = mockData.map((m) => m.salary);
+import { customerName, customerSum } from "./config";
+
+const ChartColumn = ({ customer }) => {
+	const [firstRound, setFirstRound] = useState(false);
+
+	const name = ordersNew.map((m) => m.CDES);
+	const sum = ordersNew.map((m) => m.QPRICE);
+
+	const filtered = useMemo(
+		() => ordersNew?.filter((a) => a.CDES === customer),
+		[customer]
+	);
+
+	useEffect(() => {
+		if (!firstRound) {
+			setFirstRound(true);
+			return;
+		} else if (filtered.length === 0 || !filtered) {
+			return updateData(ordersNew);
+		}
+		updateData(filtered);
+	}, [filtered]);
 
 	const [state, setState] = useState({
 		series: [
 			{
-				name: "Salary",
-				data: salary,
+				name: "Quantity",
+				data: sum,
 			},
 		],
 
@@ -46,6 +64,22 @@ const ChartColumn = () => {
 		},
 	});
 
+	const updateData = (data) => {
+		setState({
+			series: [
+				{
+					name: "Sum",
+					data: customerSum(data),
+				},
+			],
+			options: {
+				xaxis: {
+					categories: customerName(data),
+				},
+			},
+		});
+	};
+
 	return (
 		<div className="chart-column">
 			<ReactApexChart
@@ -53,7 +87,6 @@ const ChartColumn = () => {
 				series={state.series}
 				type="bar"
 				height={350}
-				// width={800}
 			/>
 		</div>
 	);

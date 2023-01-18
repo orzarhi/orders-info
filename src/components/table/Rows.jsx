@@ -41,7 +41,11 @@ const Rows = ({ row }) => {
 				<TableCell align="right">{row.ORDNAME}</TableCell>
 				<TableCell align="right">{row.ORDSTATUSDES}</TableCell>
 				<TableCell align="right">{row.TOTQUANT}</TableCell>
-				<TableCell align="right">{row.QPRICE}</TableCell>
+				<TableCell align="right">
+					{row.QPRICE > 0
+						? "₪" + row.QPRICE.toLocaleString()
+						: row.QPRICE}
+				</TableCell>
 			</TableRow>
 			<TableRow>
 				<TableCell
@@ -92,13 +96,19 @@ const Rows = ({ row }) => {
 												{orderRow.PDES}
 											</TableCell>
 											<TableCell align="right">
-												{orderRow.PRICE}
+												{orderRow.PRICE > 0
+													? "₪" +
+													  orderRow.PRICE.toLocaleString()
+													: orderRow.PRICE}
 											</TableCell>
 											<TableCell align="right">
 												{orderRow.QUANT}
 											</TableCell>
 											<TableCell align="right">
-												{orderRow.QPRICE}
+												{orderRow.QPRICE > 0
+													? "₪" +
+													  orderRow.QPRICE.toLocaleString()
+													: orderRow.QPRICE}
 											</TableCell>
 										</TableRow>
 									))}

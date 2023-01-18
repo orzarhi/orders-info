@@ -1,19 +1,39 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import orders from "~/components/data/orders";
-import { countLeftInStock, countOrdered, ordersDataName } from "./config";
+import ordersNew from "~/components/data/ordersNew";
 import "../Chart.css";
+import { customerName, customerSum } from "./config";
 
-const ChartStacked = () => {
+const ChartStacked = ({ customer }) => {
+	const [firstRound, setFirstRound] = useState(false);
+
+	const name = ordersNew.map((m) => m.CDES);
+	const sum = ordersNew.map((m) => m.QPRICE);
+
+	const filtered = useMemo(
+		() => ordersNew?.filter((a) => a.CDES === customer),
+		[customer]
+	);
+
+	useEffect(() => {
+		if (!firstRound) {
+			setFirstRound(true);
+			return;
+		} else if (filtered.length === 0 || !filtered) {
+			return updateData(ordersNew);
+		}
+		updateData(filtered);
+	}, [filtered]);
+
 	const [state, setState] = useState({
 		series: [
 			{
 				name: "מלאי",
-				data: countLeftInStock(orders),
+				data: name,
 			},
 			{
 				name: "מכירות",
-				data: countOrdered(orders),
+				data: sum,
 			},
 		],
 		options: {
@@ -37,7 +57,7 @@ const ChartStacked = () => {
 				},
 			],
 			xaxis: {
-				categories: ordersDataName(orders),
+				categories: name,
 			},
 			yaxis: {
 				opposite: true,
@@ -52,7 +72,21 @@ const ChartStacked = () => {
 			},
 		},
 	});
-
+	const updateData = (data) => {
+		setState({
+			series: [
+				{
+					name: "Sum",
+					data: customerSum(data),
+				},
+			],
+			options: {
+				xaxis: {
+					categories: customerName(data),
+				},
+			},
+		});
+	};
 	return (
 		<div className="chart-stacked">
 			<ReactApexChart
@@ -60,7 +94,6 @@ const ChartStacked = () => {
 				series={state.series}
 				type="bar"
 				height={355}
-				// width={820}
 			/>
 		</div>
 	);

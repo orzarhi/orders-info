@@ -3,32 +3,30 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiCoinStack } from "react-icons/bi";
 import { GiWeight } from "react-icons/gi";
 import { HiOutlineDocumentText } from "react-icons/hi";
-import { agentsSum } from "~/components/data/agentsSum";
-import InputSelect from "~/components/inputs/InputSelect";
-import SquareInfo from "~/components/squareInfo/SquareInfo";
 import {
-	ChartScatter,
 	ChartArea,
 	ChartColumn,
 	ChartLine,
 	ChartPie,
 	ChartPolar,
+	ChartScatter,
 	ChartStacked,
 } from "~/components/chart/index";
-import ordersData from "~/components/data/orders";
-import { ordersMap } from "~/components/inputs/config";
-import mockData from "~/mockData";
+import { agentsSum } from "~/components/data/agentsSum";
+import ordersNew from "~/components/data/ordersNew";
+import InputSelect from "~/components/inputs/InputSelect";
+import SquareInfo from "~/components/squareInfo/SquareInfo";
 import mockDate from "~/mockDate";
-import DatePicker from "~/components/dateRange/DatePicker_Old";
 import "./Details.css";
 
 const Details = () => {
-	const name = mockData.map((m) => m.name);
-
 	const [customer, setCustomer] = useState("");
 	const [agents, setAgents] = useState("");
 	const [category, setCategory] = useState("");
 	const [time, setTime] = useState("");
+
+	// Not Duplicates
+	const names = [...new Set(ordersNew.map((o) => o.CDES))];
 
 	return (
 		<>
@@ -41,7 +39,7 @@ const Details = () => {
 				/>
 				<InputSelect
 					title={"קטגוריה"}
-					options={ordersMap(ordersData)}
+					options={names}
 					value={category}
 					setValue={setCategory}
 				/>
@@ -53,14 +51,11 @@ const Details = () => {
 				/>
 				<InputSelect
 					title={"לקוח"}
-					options={name}
+					options={names}
 					value={customer}
 					setValue={setCustomer}
 				/>
 			</section>
-			{/* <section className="date-picker-wrapper">
-				<DatePicker />
-			</section> */}
 			<section className="squares-info-wrapper">
 				<SquareInfo
 					content={"סך מכירות"}
@@ -90,9 +85,9 @@ const Details = () => {
 			<section className="charts-wrapper">
 				<ChartLine customer={customer} />
 				<ChartPolar agents={agents} />
-				<ChartColumn />
-				<ChartStacked />
-				<ChartPie />
+				<ChartColumn customer={customer} />
+				<ChartStacked customer={customer} />
+				<ChartPie customer={customer} />
 				<ChartArea />
 				<ChartScatter />
 			</section>

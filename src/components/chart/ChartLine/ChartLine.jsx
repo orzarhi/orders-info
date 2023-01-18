@@ -1,16 +1,17 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import mockData from "../../../mockData";
+import ordersNew from "~/components/data/ordersNew";
 import "../Chart.css";
-import { customerName, customerSalary } from "./config";
-const ChartLineDemo = ({ customer }) => {
+import { customerName, customerSum } from "./config";
+
+const ChartLine = ({ customer }) => {
 	const [firstRound, setFirstRound] = useState(false);
 
-	const name = mockData.map((m) => m.name);
-	const salary = mockData.map((m) => m.salary);
+	const name = ordersNew.map((m) => m.CDES);
+	const sum = ordersNew.map((m) => m.QPRICE);
 
 	const filtered = useMemo(
-		() => mockData?.filter((a) => a.name === customer),
+		() => ordersNew?.filter((a) => a.CDES === customer),
 		[customer]
 	);
 
@@ -19,7 +20,7 @@ const ChartLineDemo = ({ customer }) => {
 			setFirstRound(true);
 			return;
 		} else if (filtered.length === 0 || !filtered) {
-			return updateData(mockData);
+			return updateData(ordersNew);
 		}
 		updateData(filtered);
 	}, [filtered]);
@@ -28,7 +29,7 @@ const ChartLineDemo = ({ customer }) => {
 		series: [
 			{
 				name: "series-1",
-				data: salary,
+				data: sum,
 			},
 		],
 		options: {
@@ -58,8 +59,14 @@ const ChartLineDemo = ({ customer }) => {
 				curve: "smooth",
 			},
 			title: {
-				text: "Dynamic Updating Chart",
+				text: "מכירות",
 				align: "left",
+				style: {
+					fontSize: "30px",
+					fontWeight: "bold",
+					fontFamily: "ariel",
+					color: "#263238",
+				},
 			},
 			markers: {
 				size: 0,
@@ -68,7 +75,7 @@ const ChartLineDemo = ({ customer }) => {
 				categories: name,
 			},
 			yaxis: {
-				categories: salary,
+				categories: sum,
 				opposite: true,
 			},
 			legend: {
@@ -80,8 +87,8 @@ const ChartLineDemo = ({ customer }) => {
 		setState({
 			series: [
 				{
-					name: "Salary",
-					data: customerSalary(data),
+					name: "Sum",
+					data: customerSum(data),
 				},
 			],
 			options: {
@@ -106,4 +113,4 @@ const ChartLineDemo = ({ customer }) => {
 	);
 };
 
-export default ChartLineDemo;
+export default ChartLine;

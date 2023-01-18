@@ -1,9 +1,5 @@
 export default [
 	{
-		label: "הכל",
-		value: 0,
-	},
-	{
 		label: "טיוטא",
 		value: 1,
 	},

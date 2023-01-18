@@ -1,7 +1,8 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React from "react";
+import clsx from "clsx";
 
-const InputSelect = ({ options, title, setValue }) => {
+const InputSelect = ({ options, title, setValue, className }) => {
 	return (
 		<Autocomplete
 			id="combo-box-demo"
@@ -14,6 +15,7 @@ const InputSelect = ({ options, title, setValue }) => {
 						textAlign: "center",
 						width: "250px",
 					}}
+					className={clsx(className)}
 					variant="outlined"
 					{...params}
 					label={title}

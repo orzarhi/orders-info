@@ -9,8 +9,6 @@
 	display: table;
 	margin: 0 auto;
 	padding: 0.3rem;
-	/* border: 1px solid;
-	box-shadow: 2px 3px 6px 2px #a09e9ee0; */
 }
 .main-btn {
 	display: flex;
@@ -68,7 +66,21 @@
 	height: 2rem !important;
 	font-size: 1.3rem !important;
 }
+.checkbox-open-range {
+	position: relative;
+	bottom: 1.2rem;
+	direction: rtl;
+	margin-left: 1rem !important;
+}
 
+.date-range {
+	right: 2rem;
+	position: relative;
+	bottom: 1rem;
+}
+.rs-anim-fade.rs-anim-in {
+	border-radius: 25px !important;
+}
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
 	direction: rtl !important;
 }
@@ -149,5 +161,15 @@
 	.input-select-search {
 		width: 12rem !important;
 		margin-top: 2rem !important;
+	}
+	.date-range {
+		right: 0.1rem;
+		position: relative;
+		bottom: 1rem;
+	}
+	.rs-anim-fade.rs-anim-in {
+		left: 1% !important;
+		border-radius: 40px !important;
+		top: 154px;
 	}
 }
