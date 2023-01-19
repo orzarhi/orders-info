@@ -4,11 +4,16 @@ export default [
 		value: 1,
 	},
 	{
-		label: "בוצעה",
+		label: "בבצוע",
 		value: 2,
 	},
 	{
-		label: "מאושרת לבצוע",
+		label: "בוצעה",
 		value: 3,
+	},
+
+	{
+		label: "מאושרת לבצוע",
+		value: 4,
 	},
 ];

@@ -1,14 +1,22 @@
 import { TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import orderStatus from "~/constants/orderStatus";
+// import orderStatus from "~/constants/orderStatus";
 import DateRange from "../dateRange/DateRange";
 import InputSelect from "../inputs/InputSelect";
-import { filterByName, filterByStatus } from "./config";
+import {
+	createNewObjectStatus,
+	deletingDuplicates,
+	filterByName,
+	filterByStatus,
+} from "./config";
 import "./Home.css";
 
 const Filters = ({ data, setData }) => {
 	const [firstRound, setFirstRound] = useState(false);
 	const [status, setStatus] = useState("");
+
+	const objectStatus = createNewObjectStatus(data);
+	const resultStatus = deletingDuplicates(objectStatus);
 
 	useEffect(() => {
 		if (!firstRound) {
@@ -25,7 +33,7 @@ const Filters = ({ data, setData }) => {
 			<DateRange data={data} setData={setData} className="date-range" />
 			<InputSelect
 				title={"סטטוס"}
-				options={orderStatus}
+				options={resultStatus}
 				value={status}
 				setValue={setStatus}
 				className="input-select-search"

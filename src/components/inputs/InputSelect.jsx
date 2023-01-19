@@ -8,6 +8,7 @@ const InputSelect = ({ options, title, setValue, className }) => {
 			id="combo-box-demo"
 			options={options}
 			onChange={(_, value) => setValue(value)}
+			isOptionEqualToValue={(option, value) => option.id === value.id}
 			renderInput={(params) => (
 				<TextField
 					style={{

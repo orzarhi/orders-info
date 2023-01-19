@@ -84,6 +84,14 @@
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
 	direction: rtl !important;
 }
+.css-gdh49b-MuiAutocomplete-listbox
+	.MuiAutocomplete-option[aria-selected="true"] {
+	background-color: transparent !important;
+}
+.css-gdh49b-MuiAutocomplete-listbox
+	.MuiAutocomplete-option[aria-selected="true"].Mui-focused {
+	background-color: rgba(94, 93, 93, 0.265) !important;
+}
 /* @media screen and (max-width: 1700px) {
 	.data-table {
 		display: block;
